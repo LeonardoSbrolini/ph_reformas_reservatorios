@@ -56,7 +56,7 @@ export function Values() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-12 md:mb-18">
+        <div className="reveal text-center mb-12 md:mb-18">
           <Badge className="mb-4 bg-brand-dark/8 text-brand-dark border-brand-dark/15">
             Nossa Essência
           </Badge>
@@ -71,7 +71,7 @@ export function Values() {
         </div>
 
         {/* Cards with gradient border */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-7">
+        <div className="reveal grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-7">
           {pillars.map(({ number, icon: Icon, tag, title, content, gradient, border }) => (
             <div
               key={tag}

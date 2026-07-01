@@ -19,7 +19,7 @@ export function Services() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="reveal text-center mb-16">
           <Badge className="mb-4 bg-white/10 text-white/90 border-white/20">
             O que fazemos
           </Badge>
@@ -33,7 +33,7 @@ export function Services() {
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-5 mb-14">
+        <div className="reveal grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-5 mb-14">
           {servicesData.map(({ icon: Icon, title, shortDesc: description, accent, slug }, index) => (
             <Link
               key={title}

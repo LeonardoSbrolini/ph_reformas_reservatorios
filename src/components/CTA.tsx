@@ -52,7 +52,7 @@ export function CTA() {
       {/* Vinheta suave nas bordas */}
       <div className="absolute inset-0 pointer-events-none bg-radial from-transparent to-surface-darkest/40" />
 
-      <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="reveal relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Icon badge */}
         <div className="inline-flex items-center justify-center w-18 h-18 rounded-lg bg-whatsapp shadow-xl shadow-whatsapp/40 mb-8">
           <WhatsAppSvg className="w-10 h-10 fill-white" />

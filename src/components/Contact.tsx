@@ -90,7 +90,7 @@ export function Contact() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-12">
+        <div className="reveal text-center mb-12">
           <Badge className="mb-4 bg-brand-dark/8 text-brand-dark border-brand-dark/15">
             Fale Conosco
           </Badge>

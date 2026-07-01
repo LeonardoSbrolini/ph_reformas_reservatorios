@@ -36,7 +36,7 @@ export function About() {
       <div className="absolute -bottom-24 -left-24 w-80 h-80 rounded-full bg-brand-dark/8 blur-3xl pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="reveal grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div>
             <Badge className="mb-4 bg-brand-dark/10 text-brand-dark border-brand-dark/20 hover:bg-brand-dark/20">
               Quem Somos

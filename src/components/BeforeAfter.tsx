@@ -171,7 +171,7 @@ export function BeforeAfter() {
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="mb-16 text-center">
+        <div className="reveal mb-16 text-center">
           <Badge className="mb-4 border-brand-dark/20 bg-brand-dark/10 text-brand-dark hover:bg-brand-dark/20">
             Nossos Resultados
           </Badge>
@@ -191,7 +191,7 @@ export function BeforeAfter() {
         </div>
 
         {/* Grid de projetos */}
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+        <div className="reveal grid grid-cols-1 gap-8 lg:grid-cols-3">
           {beforeAfterProjects.map((project, index) => (
             <div
               key={project.title}

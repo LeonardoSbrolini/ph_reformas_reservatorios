@@ -147,6 +147,26 @@
   to   { transform: translateX(-50%); }
 }
 
+@keyframes reveal-up {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/*
+ * Reveal ao rolar — animação scroll-driven em CSS puro (sem JS).
+ * Só ativa onde há suporte a `animation-timeline` e quando o usuário
+ * não pediu redução de movimento; caso contrário, o conteúdo aparece normal.
+ */
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .reveal {
+      animation: reveal-up both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 30%;
+    }
+  }
+}
+
 .bubble {
   position: absolute;
   bottom: -40px;

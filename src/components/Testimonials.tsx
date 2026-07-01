@@ -139,7 +139,7 @@ export function Testimonials() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 mb-14">
+        <div className="reveal flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 mb-14">
           <div>
             <Badge className="mb-3 bg-brand-dark/8 text-brand-dark border-brand-dark/15">
               Avaliações
