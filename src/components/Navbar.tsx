@@ -6,6 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import {
   Menu,
+  X,
   Wrench,
   Shield,
   PaintBucket,
@@ -17,7 +18,7 @@ import {
   ChevronDown,
 } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 import { WhatsAppSvg } from "@/components/WhatsAppSvg";
 
@@ -109,16 +110,23 @@ export function Navbar() {
             <Sheet open={open} onOpenChange={setOpen}>
               <SheetTrigger
                 className={cn(
-                  "lg:hidden -ml-1",
-                  buttonVariants({ variant: "ghost", size: "icon" }),
-                  "text-white hover:bg-white/10 w-10 h-10"
+                  "lg:hidden -ml-1 inline-flex items-center justify-center rounded-lg w-11 h-11 text-white hover:text-white hover:bg-white/15 hover:scale-110 active:scale-95 transition-all duration-200 outline-none focus-visible:ring-2 focus-visible:ring-white/40"
                 )}
               >
-                <Menu className="h-5 w-5" />
+                <Menu className="h-6 w-6" />
               </SheetTrigger>
 
-              <SheetContent side="left" className="bg-surface-darkest border-white/10 w-72 p-0">
-                <div className="p-6 border-b border-white/8">
+              <SheetContent
+                side="left"
+                showCloseButton={false}
+                className="bg-surface-darkest border-white/10 w-72 p-0"
+              >
+                {/* Botão fechar (X) — branco, gira no hover */}
+                <SheetClose className="absolute top-4 right-4 z-20 inline-flex items-center justify-center rounded-lg w-10 h-10 text-white/80 hover:text-white hover:bg-white/15 hover:rotate-90 active:scale-95 transition-all duration-300 outline-none focus-visible:ring-2 focus-visible:ring-white/40">
+                  <X className="h-6 w-6" />
+                </SheetClose>
+
+                <div className="flex items-center gap-3 p-6 border-b border-white/8">
                   <Image
                     src="/logo.png"
                     alt="PH Reforma de Reservatórios"
@@ -126,6 +134,14 @@ export function Navbar() {
                     height={175}
                     className="h-16 w-auto"
                   />
+                  <span className="flex flex-col leading-none">
+                    <span className="text-base font-extrabold tracking-tight text-white">
+                      PH <span className="text-brand-light">Reforma</span>
+                    </span>
+                    <span className="mt-1 text-[10px] font-medium uppercase tracking-[0.16em] text-white/55">
+                      de Reservatórios
+                    </span>
+                  </span>
                 </div>
 
                 <nav className="flex flex-col p-4 gap-1 overflow-y-auto">
@@ -180,7 +196,7 @@ export function Navbar() {
             </Sheet>
 
             {/* Logo */}
-            <Link href="/" className="group">
+            <Link href="/" className="group flex items-center gap-3">
               <Image
                 src="/logo.png"
                 alt="PH Reforma de Reservatórios"
@@ -189,6 +205,14 @@ export function Navbar() {
                 className="h-20 w-auto group-hover:scale-105 transition-transform duration-300"
                 priority
               />
+              <span className="flex flex-col leading-none">
+                <span className="text-sm sm:text-base lg:text-lg font-extrabold tracking-tight text-white">
+                  PH <span className="text-brand-light">Reforma</span>
+                </span>
+                <span className="mt-1 text-[10px] sm:text-[11px] font-medium uppercase tracking-[0.16em] sm:tracking-[0.18em] text-white/55">
+                  de Reservatórios
+                </span>
+              </span>
             </Link>
           </div>
 
