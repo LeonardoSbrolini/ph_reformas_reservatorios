@@ -18,12 +18,13 @@ export function Hero() {
     >
       {/* Background photo */}
       <Image
-        src="/hero_bg.png"
+        src="/hero-bg.webp"
         alt="Reservatório metálico industrial"
         fill
         priority
+        sizes="100vw"
         className="object-cover object-center scale-105"
-        quality={90}
+        quality={72}
       />
 
       {/* Multi-layer overlay for depth */}
