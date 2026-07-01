@@ -33,7 +33,7 @@ export function Services() {
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-14">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-5 mb-14">
           {servicesData.map(({ icon: Icon, title, shortDesc: description, accent, slug }, index) => (
             <Link
               key={title}
@@ -43,26 +43,26 @@ export function Services() {
               {/* Top accent bar */}
               <div className={`h-0.5 w-full bg-linear-to-r ${accent}`} />
 
-              <div className="p-7">
+              <div className="p-4 sm:p-7">
                 {/* Icon */}
                 <div
                   className={cn(
-                    "w-12 h-12 rounded-md bg-linear-to-br flex items-center justify-center mb-5 shadow-lg transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-3",
+                    "w-10 h-10 sm:w-12 sm:h-12 rounded-md bg-linear-to-br flex items-center justify-center mb-4 sm:mb-5 shadow-lg transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-3",
                     accent
                   )}
                 >
-                  <Icon className="h-5 w-5 text-white" />
+                  <Icon className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
                 </div>
 
                 {/* Number watermark */}
-                <span className="absolute top-4 right-5 text-5xl font-black text-white/5 select-none leading-none group-hover:text-white/8 transition-colors duration-300">
+                <span className="absolute top-3 right-4 sm:top-4 sm:right-5 text-4xl sm:text-5xl font-black text-white/5 select-none leading-none group-hover:text-white/8 transition-colors duration-300">
                   {String(index + 1).padStart(2, "0")}
                 </span>
 
-                <h3 className="text-base font-bold text-white mb-2 leading-snug">
+                <h3 className="text-sm sm:text-base font-bold text-white mb-2 leading-snug">
                   {title}
                 </h3>
-                <p className="text-white/55 text-sm leading-relaxed mb-5">
+                <p className="text-white/55 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-5">
                   {description}
                 </p>
 

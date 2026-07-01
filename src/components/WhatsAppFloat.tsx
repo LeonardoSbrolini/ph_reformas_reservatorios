@@ -11,10 +11,10 @@ export function WhatsAppFloat() {
       aria-label="Falar pelo WhatsApp"
       className="fixed bottom-6 right-6 z-50"
     >
-      <span className="absolute inset-0 rounded-full bg-[#25D366] opacity-40 animate-ping" />
-      <span className="absolute inset-0 rounded-full bg-[#25D366] opacity-20 animate-ping [animation-delay:0.4s]" />
+      <span className="absolute inset-0 rounded-full bg-whatsapp opacity-40 animate-ping" />
+      <span className="absolute inset-0 rounded-full bg-whatsapp opacity-20 animate-ping [animation-delay:0.4s]" />
 
-      <span className="relative flex items-center justify-center w-14 h-14 rounded-full bg-[#25D366] hover:bg-[#1DAA52] shadow-2xl transition-transform duration-300 hover:scale-110">
+      <span className="relative flex items-center justify-center w-14 h-14 rounded-full bg-whatsapp hover:bg-whatsapp-dark shadow-2xl transition-transform duration-300 hover:scale-110">
         <WhatsAppSvg className="w-7 h-7 fill-white" />
       </span>
     </a>

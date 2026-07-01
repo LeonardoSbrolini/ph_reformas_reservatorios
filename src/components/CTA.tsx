@@ -20,19 +20,41 @@ export function CTA() {
       <div className="absolute -bottom-16 -left-16 w-96 h-96 rounded-full bg-brand-dark/20 blur-3xl pointer-events-none" />
       <div className="absolute -bottom-16 -right-16 w-96 h-96 rounded-full bg-brand-light/10 blur-3xl pointer-events-none" />
 
-      {/* Subtle grid texture */}
+      {/* Mesh radial glows — profundidade de cor */}
       <div
-        className="absolute inset-0 opacity-5 pointer-events-none"
+        className="absolute inset-0 pointer-events-none"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
-          backgroundSize: "40px 40px",
+            "radial-gradient(60% 55% at 50% 0%, rgba(97,110,215,0.30), transparent 60%), radial-gradient(45% 55% at 10% 100%, rgba(73,85,196,0.24), transparent 55%), radial-gradient(45% 55% at 90% 85%, rgba(97,110,215,0.16), transparent 55%)",
         }}
       />
 
+      {/* Textura de pontos */}
+      <div
+        className="absolute inset-0 opacity-[0.13] pointer-events-none"
+        style={{
+          backgroundImage:
+            "radial-gradient(rgba(255,255,255,0.55) 1px, transparent 1px)",
+          backgroundSize: "24px 24px",
+        }}
+      />
+
+      {/* Grade fina — vibe técnica/industrial */}
+      <div
+        className="absolute inset-0 opacity-[0.04] pointer-events-none"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
+          backgroundSize: "44px 44px",
+        }}
+      />
+
+      {/* Vinheta suave nas bordas */}
+      <div className="absolute inset-0 pointer-events-none bg-radial from-transparent to-surface-darkest/40" />
+
       <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Icon badge */}
-        <div className="inline-flex items-center justify-center w-18 h-18 rounded-lg bg-[#25D366] shadow-xl shadow-[#25D366]/40 mb-8">
+        <div className="inline-flex items-center justify-center w-18 h-18 rounded-lg bg-whatsapp shadow-xl shadow-whatsapp/40 mb-8">
           <WhatsAppSvg className="w-10 h-10 fill-white" />
         </div>
 
@@ -65,7 +87,7 @@ export function CTA() {
             rel="noopener noreferrer"
             className={cn(
               buttonVariants({ size: "lg" }),
-              "bg-[#25D366] hover:bg-[#1DAA52] text-white font-bold text-base px-8 h-12 shadow-xl shadow-[#25D366]/30 w-full sm:w-auto border-0"
+              "bg-whatsapp hover:bg-whatsapp-dark text-white font-bold text-base px-8 h-12 shadow-xl shadow-whatsapp/30 w-full sm:w-auto border-0"
             )}
           >
             <WhatsAppSvg className="mr-2 w-5 h-5 fill-white shrink-0" />

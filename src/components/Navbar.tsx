@@ -82,26 +82,115 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
-        isSolid
-          ? "bg-surface-darkest/95 backdrop-blur-md shadow-xl shadow-black/20 border-b border-white/5"
-          : "bg-linear-to-b from-surface-darkest/75 to-transparent"
+        "fixed top-0 left-0 right-0 z-50 transition-shadow duration-500",
+        isSolid ? "shadow-lg shadow-black/30" : ""
       )}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+      {/* Fundo transparente base (sobre o hero) */}
+      <div className="absolute inset-0 bg-linear-to-b from-surface-darkest/80 via-surface-darkest/40 to-transparent pointer-events-none" />
 
-          {/* Logo */}
-          <Link href="/" className="group">
-            <Image
-              src="/logo.png"
-              alt="PH Reforma de Reservatórios"
-              width={140}
-              height={175}
-              className="h-14 w-auto group-hover:scale-105 transition-transform duration-300"
-              priority
-            />
-          </Link>
+      {/* Fundo sólido — surge por opacidade, sincronizado com a onda */}
+      <div
+        className={cn(
+          "absolute inset-0 bg-linear-to-b from-brand-navy to-surface-darkest transition-opacity duration-500 pointer-events-none",
+          isSolid ? "opacity-100" : "opacity-0"
+        )}
+      />
+
+      {/* Premium top accent line */}
+      <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-brand-light/50 to-transparent pointer-events-none" />
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-24">
+
+          {/* Left — mobile menu trigger + logo */}
+          <div className="flex items-center gap-2">
+            {/* Mobile menu (left side) */}
+            <Sheet open={open} onOpenChange={setOpen}>
+              <SheetTrigger
+                className={cn(
+                  "lg:hidden -ml-1",
+                  buttonVariants({ variant: "ghost", size: "icon" }),
+                  "text-white hover:bg-white/10 w-10 h-10"
+                )}
+              >
+                <Menu className="h-5 w-5" />
+              </SheetTrigger>
+
+              <SheetContent side="left" className="bg-surface-darkest border-white/10 w-72 p-0">
+                <div className="p-6 border-b border-white/8">
+                  <Image
+                    src="/logo.png"
+                    alt="PH Reforma de Reservatórios"
+                    width={140}
+                    height={175}
+                    className="h-16 w-auto"
+                  />
+                </div>
+
+                <nav className="flex flex-col p-4 gap-1 overflow-y-auto">
+                  {navLinks.map((link) =>
+                    link.dropdown ? (
+                      <div key={link.label}>
+                        <p className="px-4 pt-4 pb-1 text-[10px] font-bold text-white/30 uppercase tracking-widest">
+                          {link.label}
+                        </p>
+                        {link.dropdown.map((item) => (
+                          <Link
+                            key={item.label}
+                            href={item.href}
+                            onClick={() => setOpen(false)}
+                            className="flex items-center gap-3 px-4 py-2.5 rounded-lg text-white/65 hover:text-white hover:bg-white/5 text-sm transition-all"
+                          >
+                            <item.icon className="h-4 w-4 text-brand-light shrink-0" />
+                            {item.label}
+                          </Link>
+                        ))}
+                      </div>
+                    ) : (
+                      <Link
+                        key={link.href}
+                        href={link.href}
+                        onClick={() => setOpen(false)}
+                        className="flex items-center gap-3 px-4 py-3 rounded-lg text-white/70 hover:text-white hover:bg-white/5 text-sm font-medium transition-all"
+                      >
+                        <span className="w-1 h-1 rounded-full bg-brand-light" />
+                        {link.label}
+                      </Link>
+                    )
+                  )}
+                </nav>
+
+                <div className="p-4 pt-2">
+                  <a
+                    href="https://wa.me/5511999999999"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setOpen(false)}
+                    className={cn(
+                      buttonVariants({ size: "default" }),
+                      "w-full bg-whatsapp hover:bg-whatsapp-dark text-white font-semibold border-0 justify-center h-11"
+                    )}
+                  >
+                    <WhatsAppSvg className="mr-2 w-4 h-4 fill-white shrink-0" />
+                    Solicitar Orçamento
+                  </a>
+                </div>
+              </SheetContent>
+            </Sheet>
+
+            {/* Logo */}
+            <Link href="/" className="group">
+              <Image
+                src="/logo.png"
+                alt="PH Reforma de Reservatórios"
+                width={140}
+                height={175}
+                className="h-20 w-auto group-hover:scale-105 transition-transform duration-300"
+                priority
+              />
+            </Link>
+          </div>
 
           {/* Desktop nav */}
           <nav className="hidden lg:flex items-center gap-1">
@@ -183,97 +272,50 @@ export function Navbar() {
             )}
           </nav>
 
-          {/* CTA + mobile trigger */}
-          <div className="flex items-center gap-3">
+          {/* Right — desktop CTA */}
+          <div className="flex items-center">
             <a
               href="https://wa.me/5511999999999"
               target="_blank"
               rel="noopener noreferrer"
               className={cn(
                 buttonVariants({ size: "default" }),
-                "hidden md:inline-flex bg-[#25D366] hover:bg-[#1DAA52] text-white text-sm font-semibold border-0 shadow-lg shadow-[#25D366]/20 h-10 px-5"
+                "hidden md:inline-flex bg-whatsapp hover:bg-whatsapp-dark text-white text-sm font-semibold border-0 ring-1 ring-white/10 shadow-lg shadow-whatsapp/25 hover:shadow-whatsapp/40 hover:-translate-y-0.5 transition-all duration-300 h-10 px-5"
               )}
             >
               <WhatsAppSvg className="mr-2 w-4 h-4 fill-white shrink-0" />
               Solicitar Orçamento
             </a>
-
-            <Sheet open={open} onOpenChange={setOpen}>
-              <SheetTrigger
-                className={cn(
-                  "lg:hidden",
-                  buttonVariants({ variant: "ghost", size: "icon" }),
-                  "text-white hover:bg-white/10 w-10 h-10"
-                )}
-              >
-                <Menu className="h-5 w-5" />
-              </SheetTrigger>
-
-              <SheetContent side="right" className="bg-surface-darkest border-white/10 w-72 p-0">
-                <div className="p-6 border-b border-white/8">
-                  <Image
-                    src="/logo.png"
-                    alt="PH Reforma de Reservatórios"
-                    width={140}
-                    height={175}
-                    className="h-14 w-auto"
-                  />
-                </div>
-
-                <nav className="flex flex-col p-4 gap-1 overflow-y-auto">
-                  {navLinks.map((link) =>
-                    link.dropdown ? (
-                      <div key={link.label}>
-                        <p className="px-4 pt-4 pb-1 text-[10px] font-bold text-white/30 uppercase tracking-widest">
-                          {link.label}
-                        </p>
-                        {link.dropdown.map((item) => (
-                          <Link
-                            key={item.label}
-                            href={item.href}
-                            onClick={() => setOpen(false)}
-                            className="flex items-center gap-3 px-4 py-2.5 rounded-lg text-white/65 hover:text-white hover:bg-white/5 text-sm transition-all"
-                          >
-                            <item.icon className="h-4 w-4 text-brand-light shrink-0" />
-                            {item.label}
-                          </Link>
-                        ))}
-                      </div>
-                    ) : (
-                      <Link
-                        key={link.href}
-                        href={link.href}
-                        onClick={() => setOpen(false)}
-                        className="flex items-center gap-3 px-4 py-3 rounded-lg text-white/70 hover:text-white hover:bg-white/5 text-sm font-medium transition-all"
-                      >
-                        <span className="w-1 h-1 rounded-full bg-brand-light" />
-                        {link.label}
-                      </Link>
-                    )
-                  )}
-                </nav>
-
-                <div className="p-4 pt-2">
-                  <a
-                    href="https://wa.me/5511999999999"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={() => setOpen(false)}
-                    className={cn(
-                      buttonVariants({ size: "default" }),
-                      "w-full bg-[#25D366] hover:bg-[#1DAA52] text-white font-semibold border-0 justify-center h-11"
-                    )}
-                  >
-                    <WhatsAppSvg className="mr-2 w-4 h-4 fill-white shrink-0" />
-                    Solicitar Orçamento
-                  </a>
-                </div>
-              </SheetContent>
-            </Sheet>
           </div>
 
         </div>
       </div>
+
+      {/* Onda na borda inferior — aparece quando o header fica sólido */}
+      <HeaderWave visible={isSolid} />
     </header>
+  );
+}
+
+/** Onda animada na borda inferior do header (visível no estado sólido). */
+function HeaderWave({ visible }: { visible: boolean }) {
+  return (
+    <div
+      aria-hidden
+      className={cn(
+        "absolute inset-x-0 top-full h-4 -z-10 overflow-hidden pointer-events-none transition-opacity duration-500",
+        visible ? "opacity-100" : "opacity-0"
+      )}
+    >
+      {/* Onda preenchida na cor do header — forma a borda inferior ondulada */}
+      <svg
+        className="absolute inset-0 h-full w-[200%] animate-[wave-drift_linear_infinite] animation-duration-[8s] text-surface-darkest"
+        viewBox="0 0 2400 16"
+        preserveAspectRatio="none"
+        fill="currentColor"
+      >
+        <path d="M0,0 H2400 V4 Q2250,14 2100,4 T1800,4 T1500,4 T1200,4 T900,4 T600,4 T300,4 T0,4 Z" />
+      </svg>
+    </div>
   );
 }

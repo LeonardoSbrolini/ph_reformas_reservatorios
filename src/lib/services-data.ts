@@ -32,7 +32,7 @@ export const servicesData: ServiceData[] = [
       "Relatórios técnicos detalhados de cada inspeção",
       "Cronograma de manutenção personalizado",
     ],
-    accent: "from-[#0A2E6D] to-[#0B4DDA]",
+    accent: "from-brand-navy to-brand-dark",
     seoTitle: "Manutenção Preventiva em Reservatórios Metálicos | PH Reforma",
     seoDesc:
       "Serviço de manutenção preventiva para reservatórios metálicos. Inspeções periódicas, diagnóstico técnico e intervenções planejadas para prolongar a vida útil da estrutura.",
@@ -56,7 +56,7 @@ export const servicesData: ServiceData[] = [
       "Certificação técnica pós-reforma",
       "Laudo de conformidade estrutural",
     ],
-    accent: "from-[#0B4DDA] to-[#1E90FF]",
+    accent: "from-brand-dark to-brand-light",
     seoTitle: "Reforma Estrutural de Reservatórios Metálicos | PH Reforma",
     seoDesc:
       "Reforma estrutural especializada em reservatórios e tanques metálicos. Substituição de elementos, reforço estrutural e soldagem profissional com garantia de qualidade.",
@@ -80,7 +80,7 @@ export const servicesData: ServiceData[] = [
       "Economia de até 60% em comparação à troca",
       "Prazo de execução otimizado",
     ],
-    accent: "from-[#0A2E6D] to-[#0B4DDA]",
+    accent: "from-brand-navy to-brand-dark",
     seoTitle: "Recuperação Estrutural de Reservatórios Metálicos | PH Reforma",
     seoDesc:
       "Recuperação de reservatórios e tanques metálicos danificados por corrosão ou desgaste. Tratamento especializado que restaura integridade estrutural com economia e qualidade.",
@@ -104,7 +104,7 @@ export const servicesData: ServiceData[] = [
       "Garantia de durabilidade de 5 a 15 anos",
       "Controle de espessura e aderência por ensaios",
     ],
-    accent: "from-[#0B4DDA] to-[#1E90FF]",
+    accent: "from-brand-dark to-brand-light",
     seoTitle: "Pintura Industrial em Reservatórios Metálicos | PH Reforma",
     seoDesc:
       "Pintura industrial anticorrosiva para reservatórios e tanques metálicos. Sistemas epóxi e poliuretano com jateamento abrasivo e aplicação técnica especializada.",
@@ -128,7 +128,7 @@ export const servicesData: ServiceData[] = [
       "Novo ciclo de vida útil garantido",
       "Custo-benefício superior à substituição",
     ],
-    accent: "from-[#0A2E6D] to-[#0B4DDA]",
+    accent: "from-brand-navy to-brand-dark",
     seoTitle: "Revitalização de Reservatórios Metálicos | PH Reforma",
     seoDesc:
       "Serviço completo de revitalização de reservatórios metálicos. Limpeza profunda, tratamento superficial e novo acabamento para renovar a proteção e estética da estrutura.",
@@ -152,7 +152,7 @@ export const servicesData: ServiceData[] = [
       "Recomendações técnicas priorizadas",
       "Suporte para decisões de investimento",
     ],
-    accent: "from-[#0B4DDA] to-[#1E90FF]",
+    accent: "from-brand-dark to-brand-light",
     seoTitle: "Inspeção Técnica de Reservatórios Metálicos | PH Reforma",
     seoDesc:
       "Inspeção técnica especializada em reservatórios e tanques metálicos. Laudo completo com avaliação estrutural, medição por ultrassom e diagnóstico para tomada de decisões.",

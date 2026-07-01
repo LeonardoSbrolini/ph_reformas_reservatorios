@@ -30,7 +30,7 @@ const stats = [
 
 export function About() {
   return (
-    <section id="sobre" className="relative py-24 overflow-hidden bg-linear-to-br from-white via-slate-50 to-blue-50">
+    <section id="sobre" className="relative py-24 overflow-hidden bg-linear-to-br from-white via-slate-50 to-surface-tint">
       {/* Decorative blurred orbs */}
       <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-brand-light/10 blur-3xl pointer-events-none" />
       <div className="absolute -bottom-24 -left-24 w-80 h-80 rounded-full bg-brand-dark/8 blur-3xl pointer-events-none" />

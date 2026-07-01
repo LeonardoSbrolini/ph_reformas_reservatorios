@@ -61,7 +61,7 @@ function CompareSlider({ beforeImage, afterImage, title }: SliderProps) {
   return (
     <div
       ref={containerRef}
-      className="group/slider relative aspect-4/3 w-full cursor-ew-resize select-none touch-none overflow-hidden rounded-xl bg-surface-darkest"
+      className="group/slider relative aspect-4/3 w-full cursor-ew-resize select-none touch-none overflow-hidden bg-surface-darkest"
       onPointerDown={handlePointerDown}
       onPointerMove={handlePointerMove}
       onPointerUp={handlePointerUp}
@@ -75,9 +75,14 @@ function CompareSlider({ beforeImage, afterImage, title }: SliderProps) {
         className="object-cover"
         sizes="(max-width: 1024px) 100vw, 33vw"
       />
-      {/* Scrim inferior para legibilidade das labels */}
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-linear-to-t from-black/55 to-transparent" />
-      <span className="absolute bottom-3 right-3 z-10 rounded-md bg-brand-dark/90 px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider text-white shadow-lg backdrop-blur-sm">
+      {/* Scrim superior para legibilidade das labels */}
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-20 bg-linear-to-b from-black/45 to-transparent" />
+      <span
+        className={cn(
+          "absolute top-3 right-3 z-10 rounded-md bg-brand-dark/90 px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider text-white shadow-lg backdrop-blur-sm transition-opacity duration-300",
+          position > 85 ? "opacity-0" : "opacity-100"
+        )}
+      >
         Depois
       </span>
 
@@ -94,8 +99,13 @@ function CompareSlider({ beforeImage, afterImage, title }: SliderProps) {
           sizes="(max-width: 1024px) 100vw, 33vw"
         />
         <div className="pointer-events-none absolute inset-0 bg-black/10" />
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-linear-to-t from-black/55 to-transparent" />
-        <span className="absolute bottom-3 left-3 z-10 rounded-md bg-white/15 px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider text-white shadow-lg backdrop-blur-md">
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-20 bg-linear-to-b from-black/45 to-transparent" />
+        <span
+          className={cn(
+            "absolute top-3 left-3 z-10 rounded-md bg-white/15 px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider text-white shadow-lg backdrop-blur-md transition-opacity duration-300",
+            position < 15 ? "opacity-0" : "opacity-100"
+          )}
+        >
           Antes
         </span>
       </div>
@@ -133,13 +143,31 @@ export function BeforeAfter() {
   return (
     <section
       id="antes-depois"
-      className="relative overflow-hidden bg-linear-to-br from-white via-slate-50 to-blue-50 py-24"
+      className="relative overflow-hidden bg-linear-to-br from-surface-tint via-white to-slate-100 py-24"
     >
-      <WaterWaves />
+      {/* Mesh de degradê — profundidade de cor */}
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{
+          backgroundImage:
+            "radial-gradient(50% 45% at 12% 8%, rgba(97,110,215,0.16), transparent 60%), radial-gradient(50% 50% at 88% 92%, rgba(73,85,196,0.14), transparent 60%)",
+        }}
+      />
+
+      {/* Mesh glow no topo */}
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{
+          backgroundImage:
+            "radial-gradient(55% 45% at 50% 0%, rgba(97,110,215,0.14), transparent 60%)",
+        }}
+      />
 
       {/* Decorative orbs */}
-      <div className="pointer-events-none absolute -top-24 right-1/4 h-72 w-72 rounded-full bg-brand-light/10 blur-3xl" />
-      <div className="pointer-events-none absolute -bottom-16 left-1/4 h-80 w-80 rounded-full bg-brand-dark/8 blur-3xl" />
+      <div className="pointer-events-none absolute -top-24 right-1/4 h-72 w-72 rounded-full bg-brand-light/15 blur-3xl" />
+      <div className="pointer-events-none absolute -bottom-16 left-1/4 h-80 w-80 rounded-full bg-brand-dark/10 blur-3xl" />
+
+      <WaterWaves />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
@@ -167,33 +195,33 @@ export function BeforeAfter() {
           {beforeAfterProjects.map((project, index) => (
             <div
               key={project.title}
-              className="group relative flex flex-col rounded-2xl border border-brand-dark/10 bg-white/70 p-3 shadow-sm backdrop-blur-sm transition-all duration-500 hover:-translate-y-1.5 hover:border-brand-light/40 hover:bg-white hover:shadow-2xl hover:shadow-brand-dark/10"
+              className="group relative overflow-hidden rounded-2xl shadow-xl shadow-brand-dark/15 transition-all duration-500 md:hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-brand-dark/25"
             >
-              {/* Brilho no topo do card */}
-              <div className="absolute inset-x-3 top-0 h-px bg-linear-to-r from-transparent via-brand-light/60 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-
               <CompareSlider
                 beforeImage={project.beforeImage}
                 afterImage={project.afterImage}
                 title={project.title}
               />
 
-              <div className="px-2 pb-2 pt-5">
-                <div className="mb-2 flex items-start justify-between gap-3">
-                  <h3 className="text-base font-bold leading-snug text-brand-navy">
-                    {project.title}
-                  </h3>
-                  <span className="select-none text-2xl font-black leading-none text-brand-navy/10">
+              {/* Info overlay sobre a imagem */}
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 z-30 bg-linear-to-t from-black/90 via-black/55 to-transparent p-5 pt-20">
+                <div className="flex items-start gap-3">
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-linear-to-br from-brand-dark to-brand-light text-xs font-black text-white shadow-md shadow-black/40 transition-transform duration-300 group-hover:scale-110">
                     {String(index + 1).padStart(2, "0")}
                   </span>
+                  <div className="min-w-0">
+                    <h3 className="text-base font-bold leading-snug text-white">
+                      {project.title}
+                    </h3>
+                    {project.location && (
+                      <p className="mt-0.5 inline-flex items-center gap-1.5 text-xs font-semibold text-brand-glow">
+                        <span className="h-1 w-1 rounded-full bg-brand-light" />
+                        {project.location}
+                      </p>
+                    )}
+                  </div>
                 </div>
-                {project.location && (
-                  <p className="mb-2 inline-flex items-center gap-1.5 text-xs font-semibold text-brand-dark">
-                    <span className="h-1 w-1 rounded-full bg-brand-light" />
-                    {project.location}
-                  </p>
-                )}
-                <p className="text-sm leading-relaxed text-gray-600">
+                <p className="mt-3 text-xs leading-relaxed text-white/70">
                   {project.description}
                 </p>
               </div>

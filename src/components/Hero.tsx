@@ -53,7 +53,7 @@ export function Hero() {
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.1] mb-5">
             Manutenção e{" "}
             <span className="relative inline-block">
-              <span className="relative z-10 text-transparent bg-clip-text bg-linear-to-r from-sky-300 to-brand-light">
+              <span className="relative z-10 text-transparent bg-clip-text bg-linear-to-r from-brand-glow to-brand-light">
                 Reforma
               </span>
             </span>
@@ -79,7 +79,7 @@ export function Hero() {
               rel="noopener noreferrer"
               className={cn(
                 buttonVariants({ size: "lg" }),
-                "bg-[#25D366] hover:bg-[#1DAA52] text-white font-bold text-sm px-6 h-11 shadow-xl shadow-[#25D366]/25 border-0"
+                "bg-whatsapp hover:bg-whatsapp-dark text-white font-bold text-sm px-6 h-11 shadow-xl shadow-whatsapp/25 border-0"
               )}
             >
               <WhatsAppSvg className="mr-2 w-4 h-4 fill-white shrink-0" />
@@ -89,7 +89,7 @@ export function Hero() {
               href="#servicos"
               className={cn(
                 buttonVariants({ variant: "ghost", size: "lg" }),
-                "text-white hover:bg-white/10 font-semibold text-sm px-5 h-11 group"
+                "text-white hover:text-white border border-white/25 hover:border-white/50 hover:bg-white/10 font-semibold text-sm px-5 h-11 group transition-colors"
               )}
             >
               Nossos Serviços

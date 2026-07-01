@@ -47,15 +47,24 @@
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
 
-  /* Brand colors */
-  --color-brand-dark: #0B4DDA;
-  --color-brand-light: #1E90FF;
-  --color-brand-navy: #0A2E6D;
+  /* Brand colors — paleta índigo/periwinkle em torno de #616ed7 */
+  --color-brand-dark: #4955c4;   /* primário (botões, gradientes) */
+  --color-brand-light: #616ed7;  /* acento claro / destaques */
+  --color-brand-navy: #272c5e;   /* títulos sobre fundo claro */
+  --color-brand-glow: #a5b4fc;   /* realce claro (texto gradiente do hero) */
 
   /* Dark section surfaces — semântico, centralizado */
-  --color-surface-darkest: #0d2152;   /* navbar, footer, hero overlay, sections base */
-  --color-surface-dark: #102c65;      /* gradient end stops */
-  --color-surface-panel: #112e6c;     /* dropdowns, contact info panel */
+  --color-surface-darkest: #181c41;   /* navbar, footer, hero overlay, sections base */
+  --color-surface-dark: #20254f;      /* gradient end stops */
+  --color-surface-panel: #272d5c;     /* dropdowns, contact info panel */
+
+  /* Light section surfaces */
+  --color-surface-light: #f8faff;     /* fundo claro base (contato, depoimentos) */
+  --color-surface-tint: #eef3ff;      /* realce claro azulado */
+
+  /* Accent — WhatsApp / ações de contato */
+  --color-whatsapp: #25D366;
+  --color-whatsapp-dark: #1DAA52;
 }
 
 :root {
@@ -65,7 +74,7 @@
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.44 0.21 264);
+  --primary: oklch(0.50 0.16 274);
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
@@ -76,13 +85,13 @@
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(0.922 0 0);
   --input: oklch(0.922 0 0);
-  --ring: oklch(0.44 0.21 264);
+  --ring: oklch(0.50 0.16 274);
   --chart-1: oklch(0.87 0 0);
   --chart-2: oklch(0.556 0 0);
   --chart-3: oklch(0.439 0 0);
   --chart-4: oklch(0.371 0 0);
   --chart-5: oklch(0.269 0 0);
-  --radius: 0.625rem;
+  --radius: 0.375rem;
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.145 0 0);
   --sidebar-primary: oklch(0.205 0 0);
@@ -142,8 +151,8 @@
   position: absolute;
   bottom: -40px;
   border-radius: 50%;
-  background: radial-gradient(circle at 35% 35%, rgba(30,144,255,0.18), rgba(11,77,218,0.06));
-  border: 1px solid rgba(30, 144, 255, 0.3);
+  background: radial-gradient(circle at 35% 35%, rgba(97,110,215,0.20), rgba(73,85,196,0.06));
+  border: 1px solid rgba(97, 110, 215, 0.3);
   animation: bubble-rise var(--duration, 8s) ease-in var(--delay, 0s) infinite;
   pointer-events: none;
 }

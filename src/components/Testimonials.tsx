@@ -130,7 +130,8 @@ export function Testimonials() {
       id="avaliacoes"
       className="relative py-24 overflow-hidden"
       style={{
-        background: "linear-gradient(135deg, #f8faff 0%, #eef3ff 50%, #f4f8ff 100%)",
+        background:
+          "linear-gradient(135deg, var(--color-surface-light) 0%, var(--color-surface-tint) 50%, var(--color-surface-light) 100%)",
       }}
     >
       <div className="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-brand-light/8 blur-3xl pointer-events-none" />

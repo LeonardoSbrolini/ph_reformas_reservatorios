@@ -84,7 +84,7 @@ export default async function ServicePage({ params }: Props) {
                 ))}
               </div>
 
-              <div className="bg-linear-to-br from-blue-50 to-slate-50 rounded-lg p-8 mb-10 border border-brand-dark/8">
+              <div className="bg-linear-to-br from-surface-tint to-slate-50 rounded-lg p-8 mb-10 border border-brand-dark/8">
                 <h3 className="text-lg font-extrabold text-brand-navy mb-6">
                   Benefícios do Serviço
                 </h3>
@@ -106,7 +106,7 @@ export default async function ServicePage({ params }: Props) {
                   href={`https://wa.me/5511999999999?text=Olá! Gostaria de solicitar um orçamento para ${service.title}.`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1DAA52] text-white font-bold text-sm px-6 h-12 rounded-lg shadow-lg shadow-[#25D366]/20 transition-colors"
+                  className="flex items-center justify-center gap-2 bg-whatsapp hover:bg-whatsapp-dark text-white font-bold text-sm px-6 h-12 rounded-lg shadow-lg shadow-whatsapp/20 transition-colors"
                 >
                   <WhatsAppSvg className="w-4 h-4 fill-white shrink-0" />
                   Solicitar Orçamento
@@ -124,7 +124,7 @@ export default async function ServicePage({ params }: Props) {
             {/* Sidebar */}
             <div className="lg:col-span-1 space-y-6">
               {/* CTA card */}
-              <div className="rounded-lg bg-linear-to-br from-[#030c1f] via-brand-navy to-[#091535] p-7 text-white">
+              <div className="rounded-lg bg-linear-to-br from-surface-darkest via-brand-navy to-surface-dark p-7 text-white">
                 <div className="w-10 h-10 rounded-md bg-white/10 flex items-center justify-center mb-4">
                   <span className="text-white font-extrabold text-xs">PH</span>
                 </div>
@@ -139,7 +139,7 @@ export default async function ServicePage({ params }: Props) {
                   href="https://wa.me/5511999999999"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1DAA52] text-white font-semibold text-sm w-full h-10 rounded-lg transition-colors"
+                  className="flex items-center justify-center gap-2 bg-whatsapp hover:bg-whatsapp-dark text-white font-semibold text-sm w-full h-10 rounded-lg transition-colors"
                 >
                   <WhatsAppSvg className="w-4 h-4 fill-white shrink-0" />
                   Chamar no WhatsApp
@@ -158,7 +158,7 @@ export default async function ServicePage({ params }: Props) {
                       <li key={s.slug}>
                         <Link
                           href={`/servicos/${s.slug}`}
-                          className="flex items-center gap-3 p-3 rounded-lg border border-gray-100 hover:border-brand-dark/20 hover:bg-blue-50/50 transition-all group"
+                          className="flex items-center gap-3 p-3 rounded-lg border border-gray-100 hover:border-brand-dark/20 hover:bg-surface-tint/50 transition-all group"
                         >
                           <div
                             className={`w-8 h-8 rounded-md bg-linear-to-br ${s.accent} flex items-center justify-center shrink-0`}

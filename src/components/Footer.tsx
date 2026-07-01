@@ -48,7 +48,7 @@ export function Footer() {
             href="https://wa.me/5511999999999?text=Olá! Gostaria de solicitar um orçamento."
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2.5 bg-[#25D366] hover:bg-[#1DAA52] text-white font-bold text-sm px-6 h-12 rounded-xl shadow-lg shadow-[#25D366]/20 transition-colors shrink-0"
+            className="flex items-center gap-2.5 bg-whatsapp hover:bg-whatsapp-dark text-white font-bold text-sm px-6 h-12 rounded-xl shadow-lg shadow-whatsapp/20 transition-colors shrink-0"
           >
             <WhatsAppSvg className="w-5 h-5 fill-white shrink-0" />
             Solicitar Orçamento
@@ -69,7 +69,7 @@ export function Footer() {
                 alt="PH Reforma de Reservatórios"
                 width={140}
                 height={175}
-                className="h-20 w-auto group-hover:scale-105 transition-transform duration-300"
+                className="h-28 w-auto group-hover:scale-105 transition-transform duration-300"
               />
             </Link>
 
@@ -84,7 +84,7 @@ export function Footer() {
                   href="https://wa.me/5511999999999"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2.5 text-white/50 hover:text-[#25D366] text-sm transition-colors group"
+                  className="flex items-center gap-2.5 text-white/50 hover:text-whatsapp text-sm transition-colors group"
                 >
                   <WhatsAppSvg className="w-4 h-4 fill-current shrink-0" />
                   (11) 99999-9999

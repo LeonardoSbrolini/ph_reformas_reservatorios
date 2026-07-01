@@ -26,7 +26,7 @@ const contactItems = [
     label: "WhatsApp",
     value: "(11) 99999-9999",
     href: "https://wa.me/5511999999999",
-    hoverColor: "hover:text-[#25D366]",
+    hoverColor: "hover:text-whatsapp",
   },
   {
     icon: Phone,
@@ -78,16 +78,17 @@ export function Contact() {
       id="contato-form"
       className="relative py-24 overflow-hidden"
       style={{
-        backgroundImage: "radial-gradient(circle, #0B4DDA0D 1px, transparent 1px)",
+        backgroundImage:
+          "radial-gradient(circle, color-mix(in srgb, var(--color-brand-dark) 5%, transparent) 1px, transparent 1px)",
         backgroundSize: "28px 28px",
-        backgroundColor: "#f8faff",
+        backgroundColor: "var(--color-surface-light)",
       }}
     >
       {/* Vignette */}
-      <div className="absolute inset-0 bg-linear-to-b from-[#f8faff] via-transparent to-[#f8faff] pointer-events-none" />
-      <div className="absolute inset-0 bg-linear-to-r from-[#f8faff] via-transparent to-[#f8faff] pointer-events-none" />
+      <div className="absolute inset-0 bg-linear-to-b from-surface-light via-transparent to-surface-light pointer-events-none" />
+      <div className="absolute inset-0 bg-linear-to-r from-surface-light via-transparent to-surface-light pointer-events-none" />
 
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
           <Badge className="mb-4 bg-brand-dark/8 text-brand-dark border-brand-dark/15">
@@ -105,7 +106,7 @@ export function Contact() {
         <div className="rounded-xl overflow-hidden shadow-2xl shadow-brand-dark/10 border border-white/80 flex flex-col lg:flex-row">
 
           {/* Left — info panel */}
-          <div className="relative lg:w-[38%] bg-linear-to-br from-surface-darkest via-brand-navy to-surface-panel p-10 flex flex-col justify-between overflow-hidden">
+          <div className="relative lg:w-[38%] bg-linear-to-br from-surface-darkest via-brand-navy to-surface-panel p-12 flex flex-col justify-between overflow-hidden">
             {/* Decorative rings */}
             <div className="absolute -bottom-20 -right-20 w-64 h-64 rounded-full border border-white/8 pointer-events-none" />
             <div className="absolute -bottom-8 -right-8 w-40 h-40 rounded-full border border-white/5 pointer-events-none" />
@@ -175,7 +176,7 @@ export function Contact() {
           </div>
 
           {/* Right — form */}
-          <div className="lg:w-[62%] bg-white p-10 flex flex-col justify-center">
+          <div className="lg:w-[62%] bg-white p-12 flex flex-col justify-center">
             {state.status === "success" ? (
               <div className="flex flex-col items-center justify-center text-center py-10 gap-4">
                 <div className="w-16 h-16 rounded-full bg-green-50 flex items-center justify-center">
@@ -189,7 +190,7 @@ export function Contact() {
                   href="https://wa.me/5511999999999"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-2 flex items-center gap-2 bg-[#25D366] hover:bg-[#1DAA52] text-white font-semibold text-sm px-5 h-10 rounded-lg transition-colors"
+                  className="mt-2 flex items-center gap-2 bg-whatsapp hover:bg-whatsapp-dark text-white font-semibold text-sm px-5 h-10 rounded-lg transition-colors"
                 >
                   <WhatsAppSvg className="w-4 h-4 fill-white" />
                   Chamar no WhatsApp
@@ -264,7 +265,7 @@ export function Contact() {
                   </button>
                   <p className="text-xs text-gray-400 text-center sm:text-left">
                     Também podemos conversar pelo{" "}
-                    <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer" className="text-[#25D366] font-semibold hover:underline">
+                    <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer" className="text-whatsapp font-semibold hover:underline">
                       WhatsApp
                     </a>
                   </p>
