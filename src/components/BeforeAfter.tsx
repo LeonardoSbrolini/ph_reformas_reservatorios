@@ -195,7 +195,7 @@ export function BeforeAfter() {
           {beforeAfterProjects.map((project, index) => (
             <div
               key={project.title}
-              className="group relative overflow-hidden rounded-2xl shadow-xl shadow-brand-dark/15 transition-all duration-500 md:hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-brand-dark/25"
+              className="group relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-xl shadow-brand-dark/10 transition-all duration-500 md:hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-brand-dark/20"
             >
               <CompareSlider
                 beforeImage={project.beforeImage}
@@ -203,25 +203,29 @@ export function BeforeAfter() {
                 title={project.title}
               />
 
-              {/* Info overlay sobre a imagem */}
-              <div className="pointer-events-none absolute inset-x-0 bottom-0 z-30 bg-linear-to-t from-black/90 via-black/55 to-transparent p-5 pt-20">
+              {/* Info abaixo da imagem */}
+              <div className="p-5">
                 <div className="flex items-start gap-3">
-                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-linear-to-br from-brand-dark to-brand-light text-xs font-black text-white shadow-md shadow-black/40 transition-transform duration-300 group-hover:scale-110">
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-linear-to-br from-brand-dark to-brand-light text-xs font-black text-white shadow-md shadow-brand-dark/30 transition-transform duration-300 group-hover:scale-110">
                     {String(index + 1).padStart(2, "0")}
                   </span>
                   <div className="min-w-0">
-                    <h3 className="text-base font-bold leading-snug text-white">
+                    <h3 className="text-base font-bold leading-snug text-brand-navy">
                       {project.title}
                     </h3>
                     {project.location && (
-                      <p className="mt-0.5 inline-flex items-center gap-1.5 text-xs font-semibold text-brand-glow">
+                      <p className="mt-0.5 inline-flex items-center gap-1.5 text-xs font-semibold text-brand-dark">
                         <span className="h-1 w-1 rounded-full bg-brand-light" />
                         {project.location}
                       </p>
                     )}
                   </div>
                 </div>
-                <p className="mt-3 text-xs leading-relaxed text-white/70">
+
+                {/* Divisor em gradiente */}
+                <div className="my-4 h-px w-full bg-linear-to-r from-brand-dark/15 via-brand-light/25 to-transparent" />
+
+                <p className="text-sm leading-relaxed text-gray-600">
                   {project.description}
                 </p>
               </div>
