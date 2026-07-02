@@ -147,23 +147,30 @@
   to   { transform: translateX(-50%); }
 }
 
-@keyframes reveal-up {
-  from { opacity: 0; transform: translateY(28px); }
-  to   { opacity: 1; transform: translateY(0); }
+/*
+ * Reveal ao rolar — controlado por IntersectionObserver (ScrollReveal).
+ * O elemento começa deslocado/transparente e recebe `.is-visible` ao
+ * entrar na viewport, disparando a transição.
+ */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
 }
 
-/*
- * Reveal ao rolar — animação scroll-driven em CSS puro (sem JS).
- * Só ativa onde há suporte a `animation-timeline` e quando o usuário
- * não pediu redução de movimento; caso contrário, o conteúdo aparece normal.
- */
-@media (prefers-reduced-motion: no-preference) {
-  @supports (animation-timeline: view()) {
-    .reveal {
-      animation: reveal-up both;
-      animation-timeline: view();
-      animation-range: entry 0% cover 30%;
-    }
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }
 

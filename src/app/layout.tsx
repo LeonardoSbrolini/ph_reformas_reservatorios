@@ -6,6 +6,7 @@ import { Footer } from "@/components/Footer";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import { CookieConsent } from "@/components/CookieConsent";
 import { Analytics } from "@/components/Analytics";
+import { ScrollReveal } from "@/components/ScrollReveal";
 
 const inter = Inter({
   variable: "--font-sans",
@@ -37,12 +38,16 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className={`${inter.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
+        <noscript>
+          <style>{`.reveal{opacity:1 !important;transform:none !important;}`}</style>
+        </noscript>
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
         <WhatsAppFloat />
         <CookieConsent />
         <Analytics />
+        <ScrollReveal />
       </body>
     </html>
   );

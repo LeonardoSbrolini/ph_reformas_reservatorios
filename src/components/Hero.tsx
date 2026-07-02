@@ -3,11 +3,12 @@ import { MessageCircle, ArrowDown, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { WhatsAppSvg } from "@/components/WhatsAppSvg";
+import { Counter } from "@/components/Counter";
 
 const stats = [
-  { value: "+12", label: "Anos de\nexperiência" },
-  { value: "500+", label: "Projetos\nrealizados" },
-  { value: "100%", label: "Compromisso\ncom o cliente" },
+  { value: 12, prefix: "+", suffix: "", label: "Anos de\nexperiência" },
+  { value: 500, prefix: "", suffix: "+", label: "Projetos\nrealizados" },
+  { value: 100, prefix: "", suffix: "%", label: "Compromisso\ncom o cliente" },
 ];
 
 export function Hero() {
@@ -103,9 +104,12 @@ export function Hero() {
             {stats.map((s, i) => (
               <div key={s.label} className="flex items-center">
                 <div className="pr-6">
-                  <div className="text-2xl font-extrabold text-white leading-none mb-1">
-                    {s.value}
-                  </div>
+                  <Counter
+                    value={s.value}
+                    prefix={s.prefix}
+                    suffix={s.suffix}
+                    className="block text-2xl font-extrabold text-white leading-none mb-1"
+                  />
                   <div className="text-white/45 text-[11px] leading-tight whitespace-pre-line">
                     {s.label}
                   </div>
