@@ -1,9 +1,9 @@
 import { buttonVariants } from "@/components/ui/button";
 import { MessageCircle, ArrowDown, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
-import Image from "next/image";
 import { WhatsAppSvg } from "@/components/WhatsAppSvg";
 import { Counter } from "@/components/Counter";
+import { HeroParallax } from "@/components/HeroParallax";
 
 const stats = [
   { value: 12, prefix: "+", suffix: "", label: "Anos de\nexperiência" },
@@ -17,16 +17,8 @@ export function Hero() {
       id="inicio"
       className="relative h-screen flex flex-col justify-center overflow-hidden"
     >
-      {/* Background photo */}
-      <Image
-        src="/hero-bg.webp"
-        alt="Reservatório metálico industrial"
-        fill
-        priority
-        sizes="100vw"
-        className="object-cover object-[72%_center] sm:object-center scale-105 animate-[ken-burns_28s_ease-in-out_infinite_alternate] motion-reduce:animate-none"
-        quality={72}
-      />
+      {/* Background photo (com parallax) */}
+      <HeroParallax />
 
       {/* Multi-layer overlay for depth */}
       <div className="absolute inset-0 bg-linear-to-r from-surface-darkest/90 via-brand-navy/80 to-transparent" />
