@@ -82,11 +82,13 @@ export function Services() {
             rel="noopener noreferrer"
             className={cn(
               buttonVariants({ size: "lg" }),
-              "bg-linear-to-r from-brand-dark to-brand-light hover:opacity-90 text-white font-bold px-8 h-12 shadow-lg shadow-brand-dark/40"
+              "group relative overflow-hidden bg-linear-to-r from-brand-dark to-brand-light text-white font-bold px-8 h-12 shadow-lg shadow-brand-dark/40 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-brand-dark/50"
             )}
           >
-            <MessageCircle className="mr-2 h-5 w-5" />
-            Solicitar Orçamento Gratuito
+            {/* Shine que varre no hover */}
+            <span className="pointer-events-none absolute inset-0 -translate-x-full bg-linear-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-[130%]" />
+            <MessageCircle className="relative mr-2 h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
+            <span className="relative">Solicitar Orçamento Gratuito</span>
           </a>
         </div>
       </div>
