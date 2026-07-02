@@ -24,8 +24,8 @@ export function HeroParallax() {
       raf = 0;
       const y = window.scrollY;
       if (y <= window.innerHeight) {
-        // desloca a ~12% da velocidade do scroll (cabe na folga do wrapper)
-        el.style.transform = `translate3d(0, ${y * 0.12}px, 0)`;
+        // desloca a ~30% da velocidade do scroll (cabe na folga do wrapper)
+        el.style.transform = `translate3d(0, ${y * 0.3}px, 0)`;
       }
     };
     const onScroll = () => {
@@ -43,7 +43,7 @@ export function HeroParallax() {
   return (
     <div
       ref={ref}
-      className="absolute inset-x-0 -top-[14%] h-[128%] will-change-transform"
+      className="absolute inset-x-0 top-[-34%] h-[148%] will-change-transform"
     >
       <Image
         src="/hero-bg.webp"
