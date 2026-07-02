@@ -4,7 +4,7 @@ import { About } from "@/components/About";
 import { Services } from "@/components/Services";
 import { BeforeAfter } from "@/components/BeforeAfter";
 import { Values } from "@/components/Values";
-import { Testimonials } from "@/components/Testimonials";
+import { TestimonialsWall } from "@/components/TestimonialsWall";
 import { CTA } from "@/components/CTA";
 import { Contact } from "@/components/Contact";
 
@@ -31,7 +31,7 @@ export default function Home() {
       <Services />
       <BeforeAfter />
       <Values />
-      <Testimonials />
+      <TestimonialsWall />
       <CTA />
       <Contact />
     </>

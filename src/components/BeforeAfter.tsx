@@ -244,7 +244,7 @@ export function BeforeAfter() {
             rel="noopener noreferrer"
             className={cn(
               buttonVariants({ size: "lg" }),
-              "group relative overflow-hidden h-12 bg-linear-to-r from-brand-dark to-brand-light px-8 font-bold text-white shadow-lg shadow-brand-dark/40 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-brand-dark/50"
+              "group relative overflow-hidden h-12 bg-linear-to-r from-brand-dark to-brand-light px-8 font-bold text-white transition-all duration-300 hover:-translate-y-0.5 "
             )}
           >
             {/* Shine que varre no hover */}

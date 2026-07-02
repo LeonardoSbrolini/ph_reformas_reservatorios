@@ -40,14 +40,17 @@ export function Services() {
               href={`/servicos/${slug}`}
               className="group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg overflow-hidden hover:bg-white/10 hover:border-brand-light/30 hover:shadow-2xl hover:shadow-brand-light/10 transition-all duration-500"
             >
-              {/* Top accent bar */}
-              <div className={`h-0.5 w-full bg-linear-to-r ${accent}`} />
+              {/* Top accent bar (cresce no hover) */}
+              <div className={cn("h-0.5 w-full bg-linear-to-r transition-all duration-300 group-hover:h-1", accent)} />
 
-              <div className="p-4 sm:p-7">
+              {/* Shine que varre o card no hover */}
+              <span className="pointer-events-none absolute inset-0 z-20 -translate-x-full bg-linear-to-r from-transparent via-white/12 to-transparent transition-transform duration-1000 ease-out group-hover:translate-x-[130%]" />
+
+              <div className="relative z-10 p-4 sm:p-7">
                 {/* Icon */}
                 <div
                   className={cn(
-                    "w-10 h-10 sm:w-12 sm:h-12 rounded-md bg-linear-to-br flex items-center justify-center mb-4 sm:mb-5 shadow-lg transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-3",
+                    "w-10 h-10 sm:w-12 sm:h-12 rounded-md bg-linear-to-br flex items-center justify-center mb-4 sm:mb-5 shadow-lg",
                     accent
                   )}
                 >
@@ -66,8 +69,16 @@ export function Services() {
                   {description}
                 </p>
 
-                <span className="inline-flex items-center gap-1 text-xs font-semibold text-brand-light opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all duration-300">
-                  Saiba mais <ArrowRight className="h-3 w-3" />
+                {/* Saiba mais — escondido; aparece com shine no hover, sem borda */}
+                <span
+                  className={cn(
+                    "relative inline-flex items-center gap-1.5 overflow-hidden rounded-full px-4 py-1.5 text-xs font-bold text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100 bg-linear-to-r",
+                    accent
+                  )}
+                >
+                  <span className="pointer-events-none absolute inset-0 -translate-x-full bg-linear-to-r from-transparent via-white/40 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-[130%]" />
+                  <span className="relative">Saiba mais</span>
+                  <ArrowRight className="relative h-3.5 w-3.5" />
                 </span>
               </div>
             </Link>
@@ -82,7 +93,7 @@ export function Services() {
             rel="noopener noreferrer"
             className={cn(
               buttonVariants({ size: "lg" }),
-              "group relative overflow-hidden bg-linear-to-r from-brand-dark to-brand-light text-white font-bold px-8 h-12 shadow-lg shadow-brand-dark/40 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-brand-dark/50"
+              "group relative overflow-hidden bg-linear-to-r from-brand-dark to-brand-light text-white font-bold px-8 h-12 transition-all duration-300 hover:-translate-y-0.5 "
             )}
           >
             {/* Shine que varre no hover */}

@@ -75,22 +75,25 @@ export function Values() {
           {pillars.map(({ number, icon: Icon, tag, title, content, gradient, border }) => (
             <div
               key={tag}
-              className={`group p-px rounded-2xl bg-linear-to-br ${border} hover:shadow-2xl hover:shadow-brand-dark/10 md:hover:-translate-y-1.5 transition-all duration-400`}
+              className={`group p-px rounded-2xl bg-linear-to-br ${border} hover:shadow-2xl hover:shadow-brand-dark/15 transition-all duration-400`}
             >
-              <div className="relative flex sm:block gap-4 bg-white/95 backdrop-blur-sm rounded-2xl p-6 md:p-8 h-full overflow-hidden ring-1 ring-brand-dark/5">
+              <div className="relative flex sm:block gap-4 bg-white/95 backdrop-blur-sm rounded-2xl p-6 md:p-8 h-full overflow-hidden ring-1 ring-brand-dark/5 group-hover:ring-brand-light/30 transition-shadow duration-400">
+                {/* Shine que varre o card no hover */}
+                <span className="pointer-events-none absolute inset-0 z-20 -translate-x-full bg-linear-to-r from-transparent via-brand-light/25 to-transparent transition-transform duration-1000 ease-out group-hover:translate-x-[130%]" />
+
                 {/* Color wash orb (combina com o pilar) */}
                 <div
-                  className={`absolute -top-14 -right-14 w-40 h-40 rounded-full bg-linear-to-br ${gradient} opacity-[0.08] blur-2xl group-hover:opacity-[0.14] transition-opacity duration-500 pointer-events-none`}
+                  className={`absolute -top-14 -right-14 w-40 h-40 rounded-full bg-linear-to-br ${gradient} opacity-[0.08] blur-2xl group-hover:opacity-20 transition-opacity duration-500 pointer-events-none`}
                 />
 
                 {/* Watermark number */}
-                <span className="absolute -top-2 right-1 text-6xl sm:text-7xl md:text-8xl font-black text-brand-dark/5 select-none leading-none group-hover:text-brand-dark/8 transition-colors duration-300">
+                <span className="absolute -top-2 right-1 text-6xl sm:text-7xl md:text-8xl font-black text-brand-dark/5 select-none leading-none group-hover:text-brand-dark/10 transition-colors duration-300">
                   {number}
                 </span>
 
                 {/* Icon */}
                 <div
-                  className={`relative shrink-0 w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-linear-to-br ${gradient} flex items-center justify-center mb-0 sm:mb-6 shadow-lg shadow-brand-dark/20 ring-4 ring-white sm:group-hover:scale-110 sm:group-hover:-rotate-3 transition-transform duration-300`}
+                  className={`relative shrink-0 w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-linear-to-br ${gradient} flex items-center justify-center mb-0 sm:mb-6 shadow-lg shadow-brand-dark/20 ring-4 ring-white`}
                 >
                   <Icon className="h-6 w-6 sm:h-7 sm:w-7 text-white" />
                 </div>

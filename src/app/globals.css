@@ -196,6 +196,16 @@
   50%      { transform: translateY(-6px); }
 }
 
+/* Marquee vertical (parede de avaliações 3D) — conteúdo duplicado, loop em -50% */
+@keyframes marquee-y-up {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-50%); }
+}
+@keyframes marquee-y-down {
+  from { transform: translateY(-50%); }
+  to   { transform: translateY(0); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .intro { animation: none; }
 }
