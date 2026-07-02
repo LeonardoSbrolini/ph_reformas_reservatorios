@@ -2,6 +2,7 @@ import { buttonVariants } from "@/components/ui/button";
 import { Phone, CheckCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { WhatsAppSvg } from "@/components/WhatsAppSvg";
+import { ButtonShine } from "@/components/ButtonShine";
 
 const perks = [
   "Atendimento rápido",
@@ -87,21 +88,23 @@ export function CTA() {
             rel="noopener noreferrer"
             className={cn(
               buttonVariants({ size: "lg" }),
-              "bg-whatsapp hover:bg-whatsapp-dark text-white font-bold text-base px-8 h-12 shadow-xl shadow-whatsapp/30 w-full sm:w-auto border-0"
+              "group relative overflow-hidden bg-whatsapp hover:bg-whatsapp-dark text-white font-bold text-base px-8 h-12 shadow-xl shadow-whatsapp/30 w-full sm:w-auto border-0 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-whatsapp/50"
             )}
           >
-            <WhatsAppSvg className="mr-2 w-5 h-5 fill-white shrink-0" />
-            Falar pelo WhatsApp
+            <ButtonShine />
+            <WhatsAppSvg className="relative mr-2 w-5 h-5 fill-white shrink-0" />
+            <span className="relative">Falar pelo WhatsApp</span>
           </a>
           <a
             href="tel:+5511999999999"
             className={cn(
               buttonVariants({ size: "lg" }),
-              "bg-linear-to-r from-brand-dark to-brand-light hover:opacity-90 text-white font-bold text-base px-8 h-12 shadow-xl shadow-brand-dark/40 w-full sm:w-auto border-0"
+              "group relative overflow-hidden bg-linear-to-r from-brand-dark to-brand-light text-white font-bold text-base px-8 h-12 shadow-xl shadow-brand-dark/40 w-full sm:w-auto border-0 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-brand-dark/55"
             )}
           >
-            <Phone className="mr-2 h-5 w-5" />
-            Ligar Agora
+            <ButtonShine />
+            <Phone className="relative mr-2 h-5 w-5" />
+            <span className="relative">Ligar Agora</span>
           </a>
         </div>
       </div>

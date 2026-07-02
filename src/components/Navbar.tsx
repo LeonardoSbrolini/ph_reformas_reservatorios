@@ -21,6 +21,7 @@ import { buttonVariants } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 import { WhatsAppSvg } from "@/components/WhatsAppSvg";
+import { ButtonShine } from "@/components/ButtonShine";
 
 type DropdownItem = { icon: React.ElementType; label: string; desc: string; href: string };
 
@@ -185,11 +186,12 @@ export function Navbar() {
                     onClick={() => setOpen(false)}
                     className={cn(
                       buttonVariants({ size: "default" }),
-                      "w-full bg-whatsapp hover:bg-whatsapp-dark text-white font-semibold border-0 justify-center h-11"
+                      "group relative overflow-hidden w-full bg-whatsapp hover:bg-whatsapp-dark text-white font-semibold border-0 justify-center h-11 transition-all duration-300 hover:shadow-lg hover:shadow-whatsapp/30"
                     )}
                   >
-                    <WhatsAppSvg className="mr-2 w-4 h-4 fill-white shrink-0" />
-                    Solicitar Orçamento
+                    <ButtonShine />
+                    <WhatsAppSvg className="relative mr-2 w-4 h-4 fill-white shrink-0" />
+                    <span className="relative">Solicitar Orçamento</span>
                   </a>
                 </div>
               </SheetContent>
@@ -304,11 +306,12 @@ export function Navbar() {
               rel="noopener noreferrer"
               className={cn(
                 buttonVariants({ size: "default" }),
-                "hidden md:inline-flex bg-whatsapp hover:bg-whatsapp-dark text-white text-sm font-semibold border-0 ring-1 ring-white/10 shadow-lg shadow-whatsapp/25 hover:shadow-whatsapp/40 hover:-translate-y-0.5 transition-all duration-300 h-10 px-5"
+                "group relative overflow-hidden hidden md:inline-flex bg-whatsapp hover:bg-whatsapp-dark text-white text-sm font-semibold border-0 ring-1 ring-white/10 shadow-lg shadow-whatsapp/25 hover:shadow-whatsapp/40 hover:-translate-y-0.5 transition-all duration-300 h-10 px-5"
               )}
             >
-              <WhatsAppSvg className="mr-2 w-4 h-4 fill-white shrink-0" />
-              Solicitar Orçamento
+              <ButtonShine />
+              <WhatsAppSvg className="relative mr-2 w-4 h-4 fill-white shrink-0" />
+              <span className="relative">Solicitar Orçamento</span>
             </a>
           </div>
 

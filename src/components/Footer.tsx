@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Phone, MapPin, ArrowUpRight } from "lucide-react";
 import { WhatsAppSvg } from "@/components/WhatsAppSvg";
+import { ButtonShine } from "@/components/ButtonShine";
 
 const services = [
   { label: "Manutenção Preventiva", href: "/servicos/manutencao-preventiva" },
@@ -48,11 +49,12 @@ export function Footer() {
             href="https://wa.me/5511999999999?text=Olá! Gostaria de solicitar um orçamento."
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2.5 bg-whatsapp hover:bg-whatsapp-dark text-white font-bold text-sm px-6 h-12 rounded-xl shadow-lg shadow-whatsapp/20 transition-colors shrink-0"
+            className="group relative overflow-hidden flex items-center gap-2.5 bg-whatsapp hover:bg-whatsapp-dark text-white font-bold text-sm px-6 h-12 rounded-xl shadow-lg shadow-whatsapp/20 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-whatsapp/40 shrink-0"
           >
-            <WhatsAppSvg className="w-5 h-5 fill-white shrink-0" />
-            Solicitar Orçamento
-            <ArrowUpRight className="w-4 h-4" />
+            <ButtonShine />
+            <WhatsAppSvg className="relative w-5 h-5 fill-white shrink-0" />
+            <span className="relative">Solicitar Orçamento</span>
+            <ArrowUpRight className="relative w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </a>
         </div>
       </div>

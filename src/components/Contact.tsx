@@ -5,6 +5,7 @@ import { sendContactAction, type ContactState } from "@/actions/contact";
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
 import { WhatsAppSvg } from "@/components/WhatsAppSvg";
+import { ButtonShine } from "@/components/ButtonShine";
 import {
   Phone, MapPin, Send, CheckCircle2, AlertCircle, Loader2, ChevronDown,
 } from "lucide-react";
@@ -190,10 +191,11 @@ export function Contact() {
                   href="https://wa.me/5511999999999"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-2 flex items-center gap-2 bg-whatsapp hover:bg-whatsapp-dark text-white font-semibold text-sm px-5 h-10 rounded-lg transition-colors"
+                  className="group relative overflow-hidden mt-2 flex items-center gap-2 bg-whatsapp hover:bg-whatsapp-dark text-white font-semibold text-sm px-5 h-10 rounded-lg transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-whatsapp/40"
                 >
-                  <WhatsAppSvg className="w-4 h-4 fill-white" />
-                  Chamar no WhatsApp
+                  <ButtonShine />
+                  <WhatsAppSvg className="relative w-4 h-4 fill-white" />
+                  <span className="relative">Chamar no WhatsApp</span>
                 </a>
               </div>
             ) : (
@@ -255,13 +257,16 @@ export function Contact() {
                   <button
                     type="submit"
                     disabled={isPending}
-                    className="flex items-center justify-center gap-2 w-full sm:w-auto bg-linear-to-r from-brand-dark to-brand-light hover:opacity-90 disabled:opacity-60 text-white font-bold text-sm px-8 h-12 rounded-lg shadow-lg shadow-brand-dark/20 transition-all duration-200 border-0"
+                    className="group relative overflow-hidden flex items-center justify-center gap-2 w-full sm:w-auto bg-linear-to-r from-brand-dark to-brand-light disabled:opacity-60 disabled:pointer-events-none text-white font-bold text-sm px-8 h-12 rounded-lg shadow-lg shadow-brand-dark/20 transition-all duration-300 border-0 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-brand-dark/40"
                   >
-                    {isPending ? (
-                      <><Loader2 className="h-4 w-4 animate-spin" /> Enviando...</>
-                    ) : (
-                      <><Send className="h-4 w-4" /> Enviar Mensagem</>
-                    )}
+                    <ButtonShine />
+                    <span className="relative flex items-center gap-2">
+                      {isPending ? (
+                        <><Loader2 className="h-4 w-4 animate-spin" /> Enviando...</>
+                      ) : (
+                        <><Send className="h-4 w-4" /> Enviar Mensagem</>
+                      )}
+                    </span>
                   </button>
                   <p className="text-xs text-gray-400 text-center sm:text-left">
                     Também podemos conversar pelo{" "}

@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import { WhatsAppSvg } from "@/components/WhatsAppSvg";
 import { Counter } from "@/components/Counter";
 import { HeroParallax } from "@/components/HeroParallax";
+import { ButtonShine } from "@/components/ButtonShine";
 
 const stats = [
   { value: 12, prefix: "+", suffix: "", label: "Anos de\nexperiência" },
@@ -73,11 +74,12 @@ export function Hero() {
               rel="noopener noreferrer"
               className={cn(
                 buttonVariants({ size: "lg" }),
-                "bg-whatsapp hover:bg-whatsapp-dark text-white font-bold text-sm px-6 h-11 shadow-xl shadow-whatsapp/25 border-0"
+                "group relative overflow-hidden bg-whatsapp hover:bg-whatsapp-dark text-white font-bold text-sm px-6 h-11 shadow-xl shadow-whatsapp/25 border-0 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-whatsapp/45"
               )}
             >
-              <WhatsAppSvg className="mr-2 w-4 h-4 fill-white shrink-0" />
-              Solicitar Orçamento
+              <ButtonShine />
+              <WhatsAppSvg className="relative mr-2 w-4 h-4 fill-white shrink-0" />
+              <span className="relative">Solicitar Orçamento</span>
             </a>
             <a
               href="#servicos"

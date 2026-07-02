@@ -5,6 +5,7 @@ import { CheckCircle2, MessageCircle, ArrowRight } from "lucide-react";
 import { servicesData, getServiceBySlug } from "@/lib/services-data";
 import { PageBanner } from "@/components/PageBanner";
 import { WhatsAppSvg } from "@/components/WhatsAppSvg";
+import { ButtonShine } from "@/components/ButtonShine";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -106,10 +107,11 @@ export default async function ServicePage({ params }: Props) {
                   href={`https://wa.me/5511999999999?text=Olá! Gostaria de solicitar um orçamento para ${service.title}.`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 bg-whatsapp hover:bg-whatsapp-dark text-white font-bold text-sm px-6 h-12 rounded-lg shadow-lg shadow-whatsapp/20 transition-colors"
+                  className="group relative overflow-hidden flex items-center justify-center gap-2 bg-whatsapp hover:bg-whatsapp-dark text-white font-bold text-sm px-6 h-12 rounded-lg shadow-lg shadow-whatsapp/20 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-whatsapp/40"
                 >
-                  <WhatsAppSvg className="w-4 h-4 fill-white shrink-0" />
-                  Solicitar Orçamento
+                  <ButtonShine />
+                  <WhatsAppSvg className="relative w-4 h-4 fill-white shrink-0" />
+                  <span className="relative">Solicitar Orçamento</span>
                 </a>
                 <Link
                   href="/contato"
@@ -139,10 +141,11 @@ export default async function ServicePage({ params }: Props) {
                   href="https://wa.me/5511999999999"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 bg-whatsapp hover:bg-whatsapp-dark text-white font-semibold text-sm w-full h-10 rounded-lg transition-colors"
+                  className="group relative overflow-hidden flex items-center justify-center gap-2 bg-whatsapp hover:bg-whatsapp-dark text-white font-semibold text-sm w-full h-10 rounded-lg transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-whatsapp/40"
                 >
-                  <WhatsAppSvg className="w-4 h-4 fill-white shrink-0" />
-                  Chamar no WhatsApp
+                  <ButtonShine />
+                  <WhatsAppSvg className="relative w-4 h-4 fill-white shrink-0" />
+                  <span className="relative">Chamar no WhatsApp</span>
                 </a>
               </div>
 
