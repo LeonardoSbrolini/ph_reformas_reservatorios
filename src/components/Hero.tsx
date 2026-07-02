@@ -85,11 +85,12 @@ export function Hero() {
               href="#servicos"
               className={cn(
                 buttonVariants({ variant: "ghost", size: "lg" }),
-                "text-white hover:text-white border border-white/25 hover:border-white/50 hover:bg-white/10 font-semibold text-sm px-5 h-11 group transition-colors"
+                "group relative overflow-hidden text-white hover:text-white border border-white/25 hover:border-white/50 hover:bg-white/10 font-semibold text-sm px-5 h-11 transition-all duration-300 hover:-translate-y-0.5"
               )}
             >
-              Nossos Serviços
-              <ChevronRight className="ml-1 h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
+              <ButtonShine />
+              <span className="relative">Nossos Serviços</span>
+              <ChevronRight className="relative ml-1 h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
             </a>
           </div>
 
