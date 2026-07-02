@@ -23,7 +23,7 @@ export function Hero() {
         fill
         priority
         sizes="100vw"
-        className="object-cover object-[72%_center] sm:object-center scale-105"
+        className="object-cover object-[72%_center] sm:object-center scale-105 animate-[ken-burns_28s_ease-in-out_infinite_alternate] motion-reduce:animate-none"
         quality={72}
       />
 
@@ -43,7 +43,7 @@ export function Hero() {
         <div className="max-w-xl">
 
           {/* Eyebrow tag */}
-          <div className="flex items-center gap-3 mb-6">
+          <div className="intro flex items-center gap-3 mb-6">
             <div className="h-px w-8 bg-brand-light" />
             <span className="text-brand-light text-xs font-bold tracking-[0.2em] uppercase">
               Desde 2012 · Especialistas
@@ -51,7 +51,7 @@ export function Hero() {
           </div>
 
           {/* Headline */}
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.1] mb-5">
+          <h1 className="intro [animation-delay:120ms] text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.1] mb-5">
             Manutenção e{" "}
             <span className="relative inline-block">
               <span className="relative z-10 text-transparent bg-clip-text bg-linear-to-r from-brand-glow to-brand-light">
@@ -67,13 +67,13 @@ export function Hero() {
           </h1>
 
           {/* Description */}
-          <p className="text-white/65 text-sm sm:text-base leading-relaxed mb-8 max-w-md">
+          <p className="intro [animation-delay:240ms] text-white/65 text-sm sm:text-base leading-relaxed mb-8 max-w-md">
             Soluções técnicas em manutenção, recuperação estrutural, pintura
             e revitalização. Segurança e qualidade em cada projeto.
           </p>
 
           {/* CTAs */}
-          <div className="flex flex-wrap gap-3 mb-12">
+          <div className="intro [animation-delay:360ms] flex flex-wrap gap-3 mb-12">
             <a
               href="https://wa.me/5511999999999?text=Olá! Gostaria de solicitar uma avaliação e orçamento."
               target="_blank"
@@ -99,7 +99,7 @@ export function Hero() {
           </div>
 
           {/* Stats row */}
-          <div className="flex items-center gap-0">
+          <div className="intro [animation-delay:480ms] flex items-center gap-0">
             {stats.map((s, i) => (
               <div key={s.label} className="flex items-center">
                 <div className="pr-6">
