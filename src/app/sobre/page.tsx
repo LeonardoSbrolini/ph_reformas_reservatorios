@@ -5,13 +5,13 @@ import { siteConfig, yearsInBusiness } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "Sobre Nós",
-  description: `Conheça a ${siteConfig.name}. Empresa especializada em manutenção e reforma de tanques metálicos, com mais de ${yearsInBusiness} anos de experiência no mercado.`,
+  description: `Conheça a ${siteConfig.name}: mais de ${yearsInBusiness} anos reformando, recuperando e mantendo reservatórios e tanques metálicos em ${siteConfig.seo.region}, com segurança, qualidade e laudos técnicos.`,
   keywords:
-    "sobre PH Reforma, empresa manutenção reservatórios, quem somos PH Reforma, história empresa",
+    "sobre PH Reforma, empresa manutenção reservatórios, quem somos PH Reforma, reforma de reservatório São José do Rio Preto",
   alternates: { canonical: `${siteConfig.url}/sobre` },
   openGraph: {
-    title: `Sobre Nós | ${siteConfig.name}`,
-    description: `Conheça a ${siteConfig.name}. Empresa especializada em manutenção e reforma de tanques metálicos, com mais de ${yearsInBusiness} anos de experiência.`,
+    title: `Sobre a ${siteConfig.name}`,
+    description: `Mais de ${yearsInBusiness} anos reformando e mantendo reservatórios metálicos em ${siteConfig.seo.region}, com segurança e qualidade.`,
     url: `${siteConfig.url}/sobre`,
   },
 };
@@ -26,7 +26,9 @@ export default function SobrePage() {
         description={`Especialistas em manutenção e reforma de reservatórios metálicos há mais de ${yearsInBusiness} anos, com compromisso inabalável com qualidade e segurança.`}
         breadcrumbs={[{ label: "Sobre" }]}
       />
-      <About />
+      <div className="[&>section]:pt-12">
+        <About />
+      </div>
     </>
   );
 }

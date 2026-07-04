@@ -233,7 +233,7 @@ export default function PoliticaDePrivacidadePage() {
         breadcrumbs={[{ label: "Política de Privacidade" }]}
       />
 
-      <section className="bg-background py-16 sm:py-20">
+      <section className="bg-background pt-12 pb-16 sm:pt-14 sm:pb-20">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-muted-foreground text-sm mb-12">
             Última atualização: <strong>{LAST_UPDATE}</strong>

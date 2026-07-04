@@ -7,6 +7,7 @@ import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import { CookieConsent } from "@/components/CookieConsent";
 import { Analytics } from "@/components/Analytics";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { StructuredData } from "@/components/StructuredData";
 import { siteConfig } from "@/lib/site-config";
 
 const inter = Inter({
@@ -23,17 +24,56 @@ const googleSiteVerification = process.env.GOOGLE_SITE_VERIFICATION;
 
 export const metadata: Metadata = {
   title: {
-    default: `${siteConfig.name} | Manutenção em Tanques Metálicos`,
-    template: `%s | ${siteConfig.name}`,
+    default: `Reforma de Reservatórios Metálicos em ${siteConfig.address.city}/${siteConfig.address.state} | ${siteConfig.shortName}`,
+    template: `%s | ${siteConfig.shortName}`,
   },
-  description: siteConfig.description,
-  keywords:
-    "reforma reservatórios, manutenção tanques metálicos, recuperação estrutural, pintura industrial, PH Reforma",
+  description: `Reforma, recuperação e manutenção de reservatórios e tanques metálicos em ${siteConfig.seo.region}. Empresa com anos de experiência, laudos técnicos e proteção anticorrosiva. Orçamento gratuito pelo WhatsApp.`,
+  keywords: [
+    "reforma de reservatórios metálicos",
+    "manutenção de tanques metálicos",
+    "recuperação estrutural de reservatório",
+    "pintura industrial anticorrosiva",
+    "impermeabilização de reservatório",
+    `reforma de reservatório ${siteConfig.address.city}`,
+    "reservatório metálico São José do Rio Preto",
+    siteConfig.shortName,
+  ],
+  authors: [{ name: siteConfig.name }],
+  creator: siteConfig.name,
+  publisher: siteConfig.name,
+  category: "Manutenção Industrial",
   metadataBase: new URL(siteConfig.url),
+  alternates: { canonical: siteConfig.url },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   openGraph: {
-    siteName: siteConfig.name,
-    locale: "pt_BR",
     type: "website",
+    locale: "pt_BR",
+    siteName: siteConfig.name,
+    url: siteConfig.url,
+    title: `Reforma de Reservatórios Metálicos em ${siteConfig.address.city}/${siteConfig.address.state}`,
+    description: `Reforma, recuperação e manutenção de reservatórios e tanques metálicos em ${siteConfig.seo.region}. Orçamento gratuito pelo WhatsApp.`,
+    images: [
+      {
+        url: siteConfig.seo.ogImage,
+        alt: `${siteConfig.name} — reforma e manutenção de reservatórios metálicos`,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `Reforma de Reservatórios Metálicos em ${siteConfig.address.city}/${siteConfig.address.state}`,
+    description: `Reforma, recuperação e manutenção de reservatórios e tanques metálicos em ${siteConfig.seo.region}. Orçamento gratuito pelo WhatsApp.`,
+    images: [siteConfig.seo.ogImage],
   },
   ...(googleSiteVerification
     ? { verification: { google: googleSiteVerification } }
@@ -51,6 +91,7 @@ export default function RootLayout({
         <noscript>
           <style>{`.reveal{opacity:1 !important;transform:none !important;}`}</style>
         </noscript>
+        <StructuredData />
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />

@@ -20,16 +20,21 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const service = getServiceBySlug(slug);
   if (!service) return {};
+  const title = `${service.title} de Reservatórios Metálicos em ${siteConfig.address.city}/${siteConfig.address.state}`;
+  const description = `${service.seoDesc} Atendemos ${siteConfig.address.city} e região.`;
+
   return {
-    title: service.seoTitle,
-    description: service.seoDesc,
-    keywords: service.seoKeywords,
+    // `absolute` evita duplicar a marca, já presente no template do layout.
+    title: { absolute: `${title} | ${siteConfig.shortName}` },
+    description,
+    keywords: `${service.seoKeywords}, ${service.title.toLowerCase()} ${siteConfig.address.city}`,
     alternates: {
       canonical: `${siteConfig.url}/servicos/${service.slug}`,
     },
     openGraph: {
-      title: service.seoTitle,
-      description: service.seoDesc,
+      type: "website",
+      title,
+      description,
       url: `${siteConfig.url}/servicos/${service.slug}`,
     },
   };
@@ -44,8 +49,31 @@ export default async function ServicePage({ params }: Props) {
 
   const otherServices = servicesData.filter((s) => s.slug !== service.slug).slice(0, 3);
 
+  const serviceLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: `${service.title} de Reservatórios Metálicos`,
+    serviceType: service.title,
+    description: service.seoDesc,
+    url: `${siteConfig.url}/servicos/${service.slug}`,
+    provider: {
+      "@type": "ProfessionalService",
+      "@id": `${siteConfig.url}/#business`,
+      name: siteConfig.name,
+    },
+    areaServed: siteConfig.seo.areaServed.map((city) => ({
+      "@type": "City",
+      name: city,
+    })),
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceLd) }}
+      />
       <PageBanner
         label="Nossos Serviços"
         title={service.title}
@@ -56,12 +84,12 @@ export default async function ServicePage({ params }: Props) {
         ]}
       />
 
-      <section className="py-20 bg-white">
+      <section className="pt-12 pb-20 bg-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
 
             {/* Main content */}
-            <div className="lg:col-span-2">
+            <div className="reveal lg:col-span-2">
               <div className="flex items-start gap-5 mb-10">
                 <div
                   className={`w-16 h-16 rounded-lg bg-linear-to-br ${service.accent} flex items-center justify-center shrink-0 shadow-lg shadow-brand-dark/20`}
@@ -125,7 +153,10 @@ export default async function ServicePage({ params }: Props) {
             </div>
 
             {/* Sidebar */}
-            <div className="lg:col-span-1 space-y-6">
+            <div
+              className="reveal lg:col-span-1 space-y-6"
+              style={{ "--reveal-delay": "150ms" } as React.CSSProperties}
+            >
               {/* CTA card */}
               <div className="rounded-lg bg-linear-to-br from-surface-darkest via-brand-navy to-surface-dark p-7 text-white">
                 <div className="w-10 h-10 rounded-md bg-white/10 flex items-center justify-center mb-4">

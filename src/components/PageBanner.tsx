@@ -24,7 +24,7 @@ export function PageBanner({
       <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full bg-brand-dark/15 blur-3xl pointer-events-none" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-px bg-linear-to-r from-transparent via-brand-light/10 to-transparent pointer-events-none" />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-10">
         {breadcrumbs && (
           <nav className="flex items-center gap-1.5 text-xs text-white/40 mb-6">
             <Link href="/" className="hover:text-white/70 transition-colors">

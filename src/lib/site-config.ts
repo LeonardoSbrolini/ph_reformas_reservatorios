@@ -58,7 +58,30 @@ export const siteConfig = {
   social: {
     facebook: "https://www.facebook.com/ph.reformadereservatorios.7",
   },
+
+  /** Sinais para SEO e dados estruturados (JSON-LD, Open Graph). */
+  seo: {
+    /** Imagem padrão de compartilhamento (Open Graph / Twitter). */
+    ogImage: "/hero-bg.jpg",
+    /** Região de atuação — usada em textos de SEO e no schema. */
+    region: "São José do Rio Preto e região",
+    /** Cidades atendidas (ajuste conforme a área real de cobertura). */
+    areaServed: [
+      "São José do Rio Preto",
+      "Mirassol",
+      "Bady Bassitt",
+      "Cedral",
+      "Guapiaçu",
+    ],
+    /** Coordenadas aproximadas da cidade (refine com o endereço exato). */
+    geo: { latitude: -20.8113, longitude: -49.3758 },
+    /** Faixa de preço — sinal usado pelo Google no perfil local. */
+    priceRange: "$$",
+  },
 } as const;
+
+/** Telefone em formato internacional (E.164), derivado do href de discagem. */
+export const phoneE164 = siteConfig.contact.phone.href.replace("tel:", "");
 
 /** Anos de experiência, calculados dinamicamente a partir do ano de fundação. */
 export const yearsInBusiness = new Date().getFullYear() - siteConfig.founded.year;

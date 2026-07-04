@@ -4,15 +4,14 @@ import { Testimonials } from "@/components/Testimonials";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
-  title: "Avaliações dos Clientes",
-  description: `Veja o que nossos clientes dizem sobre a ${siteConfig.name}. Avaliações reais de empresas que confiaram na nossa expertise em manutenção e reforma de tanques metálicos.`,
+  title: "Avaliações de Clientes",
+  description: `Veja avaliações reais de clientes que confiaram na ${siteConfig.name} para reforma, recuperação e manutenção de reservatórios metálicos em ${siteConfig.seo.region}. Peça seu orçamento.`,
   keywords:
-    "avaliações PH Reforma, depoimentos clientes reservatórios, reviews empresa tanques metálicos, satisfação clientes",
+    "avaliações PH Reforma, depoimentos clientes reservatórios, reviews empresa tanques metálicos, melhor empresa reforma reservatório São José do Rio Preto",
   alternates: { canonical: `${siteConfig.url}/avaliacoes` },
   openGraph: {
-    title: `Avaliações dos Clientes | ${siteConfig.name}`,
-    description:
-      "Depoimentos reais de clientes satisfeitos com os serviços de manutenção e reforma de reservatórios metálicos.",
+    title: `Avaliações de Clientes | ${siteConfig.name}`,
+    description: `Depoimentos reais de clientes satisfeitos com a reforma e manutenção de reservatórios metálicos em ${siteConfig.seo.region}.`,
     url: `${siteConfig.url}/avaliacoes`,
   },
 };
@@ -27,7 +26,9 @@ export default function AvaliacoesPage() {
         description="A opinião de quem já confiou na PH Reforma de Reservatórios para cuidar de suas estruturas metálicas."
         breadcrumbs={[{ label: "Avaliações" }]}
       />
-      <Testimonials />
+      <div className="[&>section]:pt-12">
+        <Testimonials />
+      </div>
     </>
   );
 }

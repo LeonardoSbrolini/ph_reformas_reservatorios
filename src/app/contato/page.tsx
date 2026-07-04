@@ -4,15 +4,14 @@ import { Contact } from "@/components/Contact";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
-  title: "Entre em Contato",
-  description: `Entre em contato com a ${siteConfig.name}. Solicite um orçamento gratuito para manutenção, reforma ou recuperação do seu reservatório metálico. Atendimento via WhatsApp e e-mail.`,
+  title: `Contato e Orçamento Gratuito em ${siteConfig.address.city}/${siteConfig.address.state}`,
+  description: `Solicite um orçamento gratuito para reforma, recuperação ou manutenção do seu reservatório metálico em ${siteConfig.seo.region}. Atendimento rápido pelo WhatsApp ${siteConfig.contact.whatsapp.display}.`,
   keywords:
-    "contato PH Reforma, orçamento reservatório, solicitar orçamento tanque metálico, WhatsApp manutenção reservatório",
+    "contato PH Reforma, orçamento reservatório, solicitar orçamento tanque metálico, WhatsApp manutenção reservatório, empresa reforma reservatório São José do Rio Preto",
   alternates: { canonical: `${siteConfig.url}/contato` },
   openGraph: {
-    title: `Entre em Contato | ${siteConfig.name}`,
-    description:
-      "Solicite um orçamento gratuito para manutenção e reforma do seu reservatório metálico. Atendimento rápido via WhatsApp.",
+    title: `Contato e Orçamento Gratuito | ${siteConfig.name}`,
+    description: `Orçamento gratuito para reforma e manutenção do seu reservatório metálico em ${siteConfig.seo.region}. Atendimento rápido pelo WhatsApp.`,
     url: `${siteConfig.url}/contato`,
   },
 };
@@ -27,7 +26,9 @@ export default function ContatoPage() {
         description="Solicite uma avaliação gratuita. Nossa equipe retornará em breve com o melhor diagnóstico para o seu reservatório."
         breadcrumbs={[{ label: "Contato" }]}
       />
-      <Contact />
+      <div className="[&>section]:pt-12">
+        <Contact />
+      </div>
     </>
   );
 }

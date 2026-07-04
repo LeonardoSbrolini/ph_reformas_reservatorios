@@ -4,15 +4,14 @@ import { Services } from "@/components/Services";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
-  title: "Nossos Serviços",
-  description: `Conheça todos os serviços da ${siteConfig.name}: manutenção preventiva, reforma estrutural, recuperação, pintura industrial, revitalização e inspeção técnica em tanques metálicos.`,
+  title: `Serviços para Reservatórios Metálicos em ${siteConfig.address.city}/${siteConfig.address.state}`,
+  description: `Manutenção preventiva, reforma e recuperação estrutural, pintura industrial, revitalização, impermeabilização e inspeção técnica de reservatórios metálicos em ${siteConfig.seo.region}. Orçamento gratuito.`,
   keywords:
-    "serviços reforma reservatórios, manutenção preventiva tanque, reforma estrutural reservatório, pintura industrial tanque, inspeção técnica reservatório",
+    "serviços reforma reservatórios, manutenção preventiva tanque, reforma estrutural reservatório, pintura industrial tanque, inspeção técnica reservatório, impermeabilização reservatório São José do Rio Preto",
   alternates: { canonical: `${siteConfig.url}/servicos` },
   openGraph: {
-    title: `Nossos Serviços | ${siteConfig.name}`,
-    description:
-      "Soluções completas em manutenção, reforma e recuperação de reservatórios metálicos.",
+    title: `Serviços para Reservatórios Metálicos em ${siteConfig.address.city}/${siteConfig.address.state}`,
+    description: `Manutenção, reforma, recuperação, pintura industrial e inspeção de reservatórios metálicos em ${siteConfig.seo.region}. Orçamento gratuito.`,
     url: `${siteConfig.url}/servicos`,
   },
 };
@@ -27,7 +26,9 @@ export default function ServicosPage() {
         description="Soluções completas para recuperar, proteger e prolongar a vida útil dos seus reservatórios metálicos."
         breadcrumbs={[{ label: "Serviços" }]}
       />
-      <Services />
+      <div className="[&>section]:pt-12">
+        <Services />
+      </div>
     </>
   );
 }
