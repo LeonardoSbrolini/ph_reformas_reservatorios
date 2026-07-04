@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
 import { WhatsAppSvg } from "@/components/WhatsAppSvg";
 import { ButtonShine } from "@/components/ButtonShine";
+import { siteConfig, whatsappLink } from "@/lib/site-config";
 import {
   Phone, MapPin, Send, CheckCircle2, AlertCircle, Loader2, ChevronDown,
 } from "lucide-react";
@@ -25,23 +26,23 @@ const contactItems = [
     icon: WhatsAppSvg,
     isCustomSvg: true,
     label: "WhatsApp",
-    value: "(11) 99999-9999",
-    href: "https://wa.me/5511999999999",
+    value: siteConfig.contact.whatsapp.display,
+    href: whatsappLink(),
     hoverColor: "hover:text-whatsapp",
   },
   {
     icon: Phone,
     isCustomSvg: false,
     label: "Telefone",
-    value: "(11) 99999-9999",
-    href: "tel:+5511999999999",
+    value: siteConfig.contact.phone.display,
+    href: siteConfig.contact.phone.href,
     hoverColor: "hover:text-brand-light",
   },
   {
     icon: MapPin,
     isCustomSvg: false,
     label: "Localização",
-    value: "Brasil",
+    value: siteConfig.address.full,
     href: null,
     hoverColor: "",
   },
@@ -118,7 +119,7 @@ export function Contact() {
               <div className="mb-8">
                 <Image
                   src="/logo.png"
-                  alt="PH Reforma de Reservatórios"
+                  alt={siteConfig.name}
                   width={140}
                   height={175}
                   className="h-16 w-auto"
@@ -188,7 +189,7 @@ export function Contact() {
                   Recebemos seu contato e retornaremos em breve. Você também pode nos chamar diretamente pelo WhatsApp.
                 </p>
                 <a
-                  href="https://wa.me/5511999999999"
+                  href={whatsappLink()}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group relative overflow-hidden mt-2 flex items-center gap-2 bg-whatsapp hover:bg-whatsapp-dark text-white font-semibold text-sm px-5 h-10 rounded-lg transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-whatsapp/40"
@@ -270,7 +271,7 @@ export function Contact() {
                   </button>
                   <p className="text-xs text-gray-400 text-center sm:text-left">
                     Também podemos conversar pelo{" "}
-                    <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer" className="text-whatsapp font-semibold hover:underline">
+                    <a href={whatsappLink()} target="_blank" rel="noopener noreferrer" className="text-whatsapp font-semibold hover:underline">
                       WhatsApp
                     </a>
                   </p>

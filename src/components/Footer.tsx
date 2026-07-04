@@ -2,7 +2,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { Phone, MapPin, ArrowUpRight } from "lucide-react";
 import { WhatsAppSvg } from "@/components/WhatsAppSvg";
+import { FacebookSvg } from "@/components/FacebookSvg";
 import { ButtonShine } from "@/components/ButtonShine";
+import { siteConfig, whatsappLink, whatsappMessages } from "@/lib/site-config";
 
 const services = [
   { label: "Manutenção Preventiva", href: "/servicos/manutencao-preventiva" },
@@ -46,7 +48,7 @@ export function Footer() {
             </h3>
           </div>
           <a
-            href="https://wa.me/5511999999999?text=Olá! Gostaria de solicitar um orçamento."
+            href={whatsappLink(whatsappMessages.orcamento)}
             target="_blank"
             rel="noopener noreferrer"
             className="group relative overflow-hidden flex items-center gap-2.5 bg-whatsapp hover:bg-whatsapp-dark text-white font-bold text-sm px-6 h-12 rounded-xl shadow-lg shadow-whatsapp/20 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-whatsapp/40 shrink-0"
@@ -68,42 +70,58 @@ export function Footer() {
             <Link href="/" className="block mb-5 group">
               <Image
                 src="/logo.png"
-                alt="PH Reforma de Reservatórios"
+                alt={siteConfig.name}
                 width={140}
                 height={175}
                 className="h-28 w-auto group-hover:scale-105 transition-transform duration-300"
               />
             </Link>
 
+            <p className="flex items-center gap-2 text-white/40 text-xs italic mb-5">
+              <span className="h-px w-5 bg-white/25 shrink-0" />
+              {siteConfig.slogan}
+            </p>
+
             <p className="text-white/45 text-sm leading-relaxed mb-6">
               Recuperamos e preservamos reservatórios metálicos com soluções
-              eficientes, seguras e duradouras desde 2012.
+              eficientes, seguras e duradouras desde {siteConfig.founded.year}.
             </p>
 
             <ul className="space-y-3">
               <li>
                 <a
-                  href="https://wa.me/5511999999999"
+                  href={whatsappLink(whatsappMessages.orcamento)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2.5 text-white/50 hover:text-whatsapp text-sm transition-colors group"
                 >
                   <WhatsAppSvg className="w-4 h-4 fill-current shrink-0" />
-                  (11) 99999-9999
+                  {siteConfig.contact.whatsapp.display}
                 </a>
               </li>
               <li>
                 <a
-                  href="tel:+5511999999999"
+                  href={siteConfig.contact.phone.href}
                   className="flex items-center gap-2.5 text-white/50 hover:text-brand-light text-sm transition-colors"
                 >
                   <Phone className="h-4 w-4 shrink-0" />
-                  (11) 99999-9999
+                  {siteConfig.contact.phone.display}
                 </a>
               </li>
               <li className="flex items-center gap-2.5 text-white/50 text-sm">
                 <MapPin className="h-4 w-4 shrink-0" />
-                Brasil
+                {siteConfig.address.full}
+              </li>
+              <li>
+                <a
+                  href={siteConfig.social.facebook}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2.5 text-white/50 hover:text-brand-light text-sm transition-colors"
+                >
+                  <FacebookSvg className="h-4 w-4 fill-current shrink-0" />
+                  Facebook
+                </a>
               </li>
             </ul>
           </div>
@@ -150,10 +168,10 @@ export function Footer() {
             <div className="mt-8 p-4 rounded-lg border border-white/6 bg-white/3">
               <p className="text-white/30 text-xs leading-relaxed">
                 <span className="text-white/50 font-semibold">
-                  PH DE SOUZA REFORMAS DE RESERVATÓRIOS ME
+                  {siteConfig.legalName}
                 </span>
                 <br />
-                Fundada em 09/10/2012 · CNPJ regularizado · Área de atuação: manutenção em tanques metálicos
+                Fundada em {siteConfig.founded.date} · CNPJ regularizado · Área de atuação: manutenção em tanques metálicos
               </p>
             </div>
           </div>
@@ -165,7 +183,7 @@ export function Footer() {
       <div className="relative border-t border-white/6">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-2">
           <p className="text-white/25 text-xs">
-            &copy; {year} PH Reforma de Reservatórios. Todos os direitos reservados.
+            &copy; {year} {siteConfig.name}. Todos os direitos reservados.
           </p>
           <div className="flex items-center gap-4">
             <Link

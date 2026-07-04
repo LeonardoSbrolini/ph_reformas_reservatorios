@@ -26,27 +26,27 @@ export type BeforeAfterProject = {
  */
 export const beforeAfterProjects: BeforeAfterProject[] = [
   {
-    title: "Recuperação Estrutural de Reservatório",
-    location: "Reservatório metálico industrial",
+    title: "Recuperação e Pintura de Reservatório Vertical",
+    location: "Reservatório metálico vertical",
     description:
-      "Tratamento completo de corrosão, recuperação da chaparia e reforço estrutural, devolvendo a integridade e segurança ao tanque.",
+      "Tratamento da corrosão e da chaparia externa, com preparação de superfície e nova pintura anticorrosiva. A escada tipo gaiola também foi recuperada e repintada, devolvendo proteção e um acabamento azul uniforme.",
     beforeImage: "/before_after/example1/before.jpeg",
     afterImage: "/before_after/example1/after.jpeg",
   },
   {
-    title: "Pintura e Proteção Anticorrosiva",
-    location: "Tanque de armazenamento",
+    title: "Recuperação Interna e Impermeabilização",
+    location: "Interior de reservatório metálico",
     description:
-      "Preparação de superfície, aplicação de primer e pintura industrial de alta durabilidade para proteção contra a corrosão.",
+      "Remoção da corrosão e do revestimento deteriorado, seguida do tratamento das chapas e da aplicação de novo revestimento interno impermeável. O interior enferrujado deu lugar a uma superfície selada, lisa e protegida.",
     beforeImage: "/before_after/example2/before.jpeg",
     afterImage: "/before_after/example2/after.jpeg",
   },
   {
-    title: "Reforma Geral de Reservatório",
-    location: "Reservatório elevado",
+    title: "Acabamento e Pintura de Reservatório Elevado",
+    location: "Reservatório elevado — SAAE, Amparo/SP",
     description:
-      "Manutenção corretiva, substituição de componentes desgastados e acabamento final, prolongando a vida útil da estrutura.",
-    beforeImage: "/hero-bg.jpg",
-    afterImage: "/hero-bg.jpg",
+      "Acabamento e pintura externa de reservatório elevado, com proteção da estrutura e aplicação da identidade visual do cliente. A estrutura em obra recebeu a pintura final e a logomarca do SAAE, pronta para operação.",
+    beforeImage: "/before_after/example3/before.jpg",
+    afterImage: "/before_after/example3/after.jpg",
   },
 ];

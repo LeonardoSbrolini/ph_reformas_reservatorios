@@ -1,12 +1,13 @@
 import { Badge } from "@/components/ui/badge";
 import { Calendar, Users, Award, Wrench } from "lucide-react";
+import { siteConfig, yearsInBusiness } from "@/lib/site-config";
 
 const stats = [
   {
     icon: Calendar,
-    value: "2012",
+    value: String(siteConfig.founded.year),
     label: "Fundação",
-    desc: "Mais de 12 anos de experiência",
+    desc: `Mais de ${yearsInBusiness} anos de experiência`,
   },
   {
     icon: Users,
@@ -43,7 +44,7 @@ export function About() {
             </Badge>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-brand-navy mb-6 leading-tight">
               Sobre a{" "}
-              <span className="text-brand-light">PH Reforma de Reservatórios</span>
+              <span className="text-brand-light">{siteConfig.name}</span>
             </h2>
             <p className="text-gray-600 text-base sm:text-lg leading-relaxed mb-4">
               Somos uma empresa especializada na manutenção, recuperação e reforma
@@ -54,7 +55,7 @@ export function About() {
             <p className="text-gray-600 text-base sm:text-lg leading-relaxed mb-8">
               Contamos com profissionais qualificados, equipamentos adequados e
               processos rigorosos para garantir a máxima confiabilidade em cada
-              projeto executado. Desde 2012 atuamos no mercado com o compromisso
+              projeto executado. Desde {siteConfig.founded.year} atuamos no mercado com o compromisso
               de entregar excelência e tranquilidade aos nossos clientes.
             </p>
 

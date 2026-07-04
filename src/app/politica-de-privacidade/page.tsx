@@ -12,27 +12,26 @@ import {
   Mail,
 } from "lucide-react";
 import { PageBanner } from "@/components/PageBanner";
+import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "Política de Privacidade e Segurança",
-  description:
-    "Política de Privacidade e Segurança da PH Reforma de Reservatórios, em conformidade com a LGPD (Lei nº 13.709/2018). Saiba como tratamos e protegemos seus dados pessoais.",
+  description: `Política de Privacidade e Segurança da ${siteConfig.name}, em conformidade com a LGPD (Lei nº 13.709/2018). Saiba como tratamos e protegemos seus dados pessoais.`,
   keywords:
     "política de privacidade, LGPD, proteção de dados, segurança da informação, PH Reforma",
   alternates: {
-    canonical: "https://phreformas.com.br/politica-de-privacidade",
+    canonical: `${siteConfig.url}/politica-de-privacidade`,
   },
   openGraph: {
-    title: "Política de Privacidade e Segurança | PH Reforma de Reservatórios",
-    description:
-      "Como a PH Reforma de Reservatórios trata e protege seus dados pessoais, em conformidade com a LGPD.",
-    url: "https://phreformas.com.br/politica-de-privacidade",
+    title: `Política de Privacidade e Segurança | ${siteConfig.name}`,
+    description: `Como a ${siteConfig.name} trata e protege seus dados pessoais, em conformidade com a LGPD.`,
+    url: `${siteConfig.url}/politica-de-privacidade`,
   },
 };
 
-// Atualize antes de publicar:
-const COMPANY = "PH DE SOUZA REFORMAS DE RESERVATÓRIOS ME";
-const CONTACT_EMAIL = "contato@phreformas.com.br"; // TODO: confirmar e-mail oficial
+const COMPANY = siteConfig.legalName;
+const CONTACT_EMAIL = siteConfig.contact.email;
+// Atualize a data sempre que a política for revisada:
 const LAST_UPDATE = "21 de junho de 2026";
 
 type Section = {

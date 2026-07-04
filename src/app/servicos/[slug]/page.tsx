@@ -6,6 +6,7 @@ import { servicesData, getServiceBySlug } from "@/lib/services-data";
 import { PageBanner } from "@/components/PageBanner";
 import { WhatsAppSvg } from "@/components/WhatsAppSvg";
 import { ButtonShine } from "@/components/ButtonShine";
+import { siteConfig, whatsappLink } from "@/lib/site-config";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -24,12 +25,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: service.seoDesc,
     keywords: service.seoKeywords,
     alternates: {
-      canonical: `https://phreformas.com.br/servicos/${service.slug}`,
+      canonical: `${siteConfig.url}/servicos/${service.slug}`,
     },
     openGraph: {
       title: service.seoTitle,
       description: service.seoDesc,
-      url: `https://phreformas.com.br/servicos/${service.slug}`,
+      url: `${siteConfig.url}/servicos/${service.slug}`,
     },
   };
 }
@@ -72,7 +73,7 @@ export default async function ServicePage({ params }: Props) {
                     {service.title}
                   </h2>
                   <p className="text-brand-light text-sm font-semibold">
-                    PH Reforma de Reservatórios
+                    {siteConfig.name}
                   </p>
                 </div>
               </div>
@@ -104,7 +105,7 @@ export default async function ServicePage({ params }: Props) {
 
               <div className="flex flex-col sm:flex-row gap-3">
                 <a
-                  href={`https://wa.me/5511999999999?text=Olá! Gostaria de solicitar um orçamento para ${service.title}.`}
+                  href={whatsappLink(`Olá! Gostaria de solicitar um orçamento para ${service.title}.`)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group relative overflow-hidden flex items-center justify-center gap-2 bg-whatsapp hover:bg-whatsapp-dark text-white font-bold text-sm px-6 h-12 rounded-lg shadow-lg shadow-whatsapp/20 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-whatsapp/40"
@@ -138,7 +139,7 @@ export default async function ServicePage({ params }: Props) {
                   diagnóstico sem compromisso.
                 </p>
                 <a
-                  href="https://wa.me/5511999999999"
+                  href={whatsappLink()}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group relative overflow-hidden flex items-center justify-center gap-2 bg-whatsapp hover:bg-whatsapp-dark text-white font-semibold text-sm w-full h-10 rounded-lg transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-whatsapp/40"

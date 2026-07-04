@@ -1,19 +1,19 @@
 import type { Metadata } from "next";
 import { PageBanner } from "@/components/PageBanner";
 import { Contact } from "@/components/Contact";
+import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "Entre em Contato",
-  description:
-    "Entre em contato com a PH Reforma de Reservatórios. Solicite um orçamento gratuito para manutenção, reforma ou recuperação do seu reservatório metálico. Atendimento via WhatsApp e e-mail.",
+  description: `Entre em contato com a ${siteConfig.name}. Solicite um orçamento gratuito para manutenção, reforma ou recuperação do seu reservatório metálico. Atendimento via WhatsApp e e-mail.`,
   keywords:
     "contato PH Reforma, orçamento reservatório, solicitar orçamento tanque metálico, WhatsApp manutenção reservatório",
-  alternates: { canonical: "https://phreformas.com.br/contato" },
+  alternates: { canonical: `${siteConfig.url}/contato` },
   openGraph: {
-    title: "Entre em Contato | PH Reforma de Reservatórios",
+    title: `Entre em Contato | ${siteConfig.name}`,
     description:
       "Solicite um orçamento gratuito para manutenção e reforma do seu reservatório metálico. Atendimento rápido via WhatsApp.",
-    url: "https://phreformas.com.br/contato",
+    url: `${siteConfig.url}/contato`,
   },
 };
 

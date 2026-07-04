@@ -6,9 +6,12 @@ import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
 import { WaterWaves } from "@/components/WaterWaves";
-import { ChevronLeft, ChevronRight, MessageCircle } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { beforeAfterProjects } from "@/lib/projects-data";
+import { WhatsAppSvg } from "@/components/WhatsAppSvg";
+import { ButtonShine } from "@/components/ButtonShine";
+import { whatsappLink, whatsappMessages } from "@/lib/site-config";
 
 type SliderProps = {
   beforeImage: string;
@@ -239,17 +242,16 @@ export function BeforeAfter() {
             Seu reservatório precisa de uma transformação como essas?
           </p>
           <Link
-            href="https://wa.me/5511999999999?text=Olá! Gostaria de solicitar um orçamento para reforma de reservatório."
+            href={whatsappLink(whatsappMessages.reforma)}
             target="_blank"
             rel="noopener noreferrer"
             className={cn(
               buttonVariants({ size: "lg" }),
-              "group relative overflow-hidden h-12 bg-linear-to-r from-brand-dark to-brand-light px-8 font-bold text-white transition-all duration-300 hover:-translate-y-0.5 "
+              "group relative overflow-hidden h-12 bg-whatsapp hover:bg-whatsapp-dark px-8 font-bold text-white border-0 shadow-xl shadow-whatsapp/30 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-whatsapp/50"
             )}
           >
-            {/* Shine que varre no hover */}
-            <span className="pointer-events-none absolute inset-0 -translate-x-full bg-linear-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-[130%]" />
-            <MessageCircle className="relative mr-2 h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
+            <ButtonShine />
+            <WhatsAppSvg className="relative mr-2 w-5 h-5 fill-white shrink-0" />
             <span className="relative">Solicitar Orçamento Gratuito</span>
           </Link>
         </div>

@@ -22,6 +22,7 @@ import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/s
 import { cn } from "@/lib/utils";
 import { WhatsAppSvg } from "@/components/WhatsAppSvg";
 import { ButtonShine } from "@/components/ButtonShine";
+import { siteConfig, whatsappLink } from "@/lib/site-config";
 
 type DropdownItem = { icon: React.ElementType; label: string; desc: string; href: string };
 
@@ -130,7 +131,7 @@ export function Navbar() {
                 <div className="flex items-center gap-3 p-6 border-b border-white/8">
                   <Image
                     src="/logo.png"
-                    alt="PH Reforma de Reservatórios"
+                    alt={siteConfig.name}
                     width={140}
                     height={175}
                     className="h-16 w-auto"
@@ -180,7 +181,7 @@ export function Navbar() {
 
                 <div className="p-4 pt-2">
                   <a
-                    href="https://wa.me/5511999999999"
+                    href={whatsappLink()}
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => setOpen(false)}
@@ -201,7 +202,7 @@ export function Navbar() {
             <Link href="/" className="group flex items-center gap-3">
               <Image
                 src="/logo.png"
-                alt="PH Reforma de Reservatórios"
+                alt={siteConfig.name}
                 width={140}
                 height={175}
                 className="h-20 w-auto group-hover:scale-105 transition-transform duration-300"
@@ -301,7 +302,7 @@ export function Navbar() {
           {/* Right — desktop CTA */}
           <div className="flex items-center">
             <a
-              href="https://wa.me/5511999999999"
+              href={whatsappLink()}
               target="_blank"
               rel="noopener noreferrer"
               className={cn(

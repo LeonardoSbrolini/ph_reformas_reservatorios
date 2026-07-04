@@ -3,6 +3,7 @@ import { Phone, CheckCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { WhatsAppSvg } from "@/components/WhatsAppSvg";
 import { ButtonShine } from "@/components/ButtonShine";
+import { siteConfig, whatsappLink } from "@/lib/site-config";
 
 const perks = [
   "Atendimento rápido",
@@ -16,6 +17,12 @@ export function CTA() {
       id="contato"
       className="relative py-28 overflow-hidden bg-linear-to-br from-surface-darkest via-brand-navy to-surface-dark"
     >
+      {/* Fundo drops */}
+      <div
+        className="absolute inset-0 opacity-25 pointer-events-none bg-cover bg-center"
+        style={{ backgroundImage: "url('/drops-bg.png')" }}
+      />
+
       {/* Decorative orbs */}
       <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-200 h-64 rounded-full bg-brand-light/10 blur-3xl pointer-events-none" />
       <div className="absolute -bottom-16 -left-16 w-96 h-96 rounded-full bg-brand-dark/20 blur-3xl pointer-events-none" />
@@ -83,7 +90,7 @@ export function CTA() {
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
-            href="https://wa.me/5511999999999?text=Olá! Gostaria de solicitar uma avaliação e orçamento para meu reservatório."
+            href={whatsappLink("Olá! Gostaria de solicitar uma avaliação e orçamento para meu reservatório.")}
             target="_blank"
             rel="noopener noreferrer"
             className={cn(
@@ -96,7 +103,7 @@ export function CTA() {
             <span className="relative">Falar pelo WhatsApp</span>
           </a>
           <a
-            href="tel:+5511999999999"
+            href={siteConfig.contact.phone.href}
             className={cn(
               buttonVariants({ size: "lg" }),
               "group relative overflow-hidden bg-linear-to-r from-brand-dark to-brand-light text-white font-bold text-base px-8 h-12 shadow-xl shadow-brand-dark/40 w-full sm:w-auto border-0 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-brand-dark/55"

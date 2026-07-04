@@ -1,11 +1,12 @@
 "use client";
 
 import { WhatsAppSvg } from "@/components/WhatsAppSvg";
+import { whatsappLink, whatsappMessages } from "@/lib/site-config";
 
 export function WhatsAppFloat() {
   return (
     <a
-      href="https://wa.me/5511999999999?text=Olá! Gostaria de solicitar uma avaliação e orçamento."
+      href={whatsappLink(whatsappMessages.avaliacao)}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Falar pelo WhatsApp"

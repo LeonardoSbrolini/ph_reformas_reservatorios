@@ -7,19 +7,19 @@ import { Values } from "@/components/Values";
 import { TestimonialsWall } from "@/components/TestimonialsWall";
 import { CTA } from "@/components/CTA";
 import { Contact } from "@/components/Contact";
+import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
-  title: "PH Reforma de Reservatórios | Manutenção em Tanques Metálicos",
-  description:
-    "Especialistas em manutenção, reforma e recuperação de reservatórios metálicos. Soluções eficientes, seguras e duradouras desde 2012.",
+  title: `${siteConfig.name} | Manutenção em Tanques Metálicos`,
+  description: siteConfig.description,
   keywords:
     "reforma reservatórios, manutenção tanques metálicos, recuperação estrutural, pintura industrial",
-  alternates: { canonical: "https://phreformas.com.br" },
+  alternates: { canonical: siteConfig.url },
   openGraph: {
-    title: "PH Reforma de Reservatórios | Manutenção em Tanques Metálicos",
+    title: `${siteConfig.name} | Manutenção em Tanques Metálicos`,
     description:
       "Especialistas em manutenção, reforma e recuperação de reservatórios metálicos.",
-    url: "https://phreformas.com.br",
+    url: siteConfig.url,
   },
 };
 

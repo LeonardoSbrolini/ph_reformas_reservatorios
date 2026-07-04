@@ -1,13 +1,15 @@
 import { buttonVariants } from "@/components/ui/button";
 import { MessageCircle, ArrowDown, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 import { WhatsAppSvg } from "@/components/WhatsAppSvg";
 import { Counter } from "@/components/Counter";
 import { HeroParallax } from "@/components/HeroParallax";
 import { ButtonShine } from "@/components/ButtonShine";
+import { siteConfig, whatsappLink, whatsappMessages, yearsInBusiness } from "@/lib/site-config";
 
 const stats = [
-  { value: 12, prefix: "+", suffix: "", label: "Anos de\nexperiência" },
+  { value: yearsInBusiness, prefix: "+", suffix: "", label: "Anos de\nexperiência" },
   { value: 500, prefix: "", suffix: "+", label: "Projetos\nrealizados" },
   { value: 100, prefix: "", suffix: "%", label: "Compromisso\ncom o cliente" },
 ];
@@ -21,13 +23,19 @@ export function Hero() {
       {/* Background photo (com parallax) */}
       <HeroParallax />
 
+      {/* Efeito de gotas (molhado) sobre a foto */}
+      <Image
+        src="/drops-bg.png"
+        alt=""
+        aria-hidden
+        fill
+        sizes="100vw"
+        className="pointer-events-none object-contain opacity-60 mix-blend-screen"
+      />
+
       {/* Multi-layer overlay for depth */}
       <div className="absolute inset-0 bg-linear-to-r from-surface-darkest/90 via-brand-navy/80 to-transparent" />
       <div className="absolute inset-0 bg-linear-to-t from-surface-darkest/60 via-transparent to-surface-darkest/20" />
-
-      {/* Decorative ring — right side */}
-      <div className="absolute right-[-180px] top-1/2 -translate-y-1/2 w-[560px] h-[560px] rounded-full border border-white/8 pointer-events-none" />
-      <div className="absolute right-[-100px] top-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full border border-white/5 pointer-events-none" />
 
       {/* Vertical accent line */}
       <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-linear-to-b from-transparent via-brand-light/60 to-transparent pointer-events-none" />
@@ -40,7 +48,7 @@ export function Hero() {
           <div className="intro flex items-center gap-3 mb-6">
             <div className="h-px w-8 bg-brand-light" />
             <span className="text-brand-light text-xs font-bold tracking-[0.2em] uppercase">
-              Desde 2012 · Especialistas
+              Desde {siteConfig.founded.year} · Especialistas
             </span>
           </div>
 
@@ -61,15 +69,21 @@ export function Hero() {
           </h1>
 
           {/* Description */}
-          <p className="intro [animation-delay:240ms] text-white/65 text-sm sm:text-base leading-relaxed mb-8 max-w-md">
+          <p className="intro [animation-delay:240ms] text-white/65 text-sm sm:text-base leading-relaxed mb-5 max-w-md">
             Soluções técnicas em manutenção, recuperação estrutural, pintura
             e revitalização. Segurança e qualidade em cada projeto.
+          </p>
+
+          {/* Slogan */}
+          <p className="intro [animation-delay:300ms] flex items-center gap-2 text-white/40 text-xs sm:text-sm italic mb-8">
+            <span className="h-px w-5 bg-white/25 shrink-0" />
+            {siteConfig.slogan}
           </p>
 
           {/* CTAs */}
           <div className="intro [animation-delay:360ms] flex flex-wrap gap-3 mb-12">
             <a
-              href="https://wa.me/5511999999999?text=Olá! Gostaria de solicitar uma avaliação e orçamento."
+              href={whatsappLink(whatsappMessages.avaliacao)}
               target="_blank"
               rel="noopener noreferrer"
               className={cn(
