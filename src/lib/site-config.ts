@@ -19,7 +19,7 @@ export const siteConfig = {
   description:
     "Especialistas em manutenção, reforma e recuperação de reservatórios metálicos. Soluções eficientes, seguras e duradouras desde 2012.",
   /** URL de produção (sem barra final) */
-  url: "https://phreformas.com.br",
+  url: "https://phreformasdereservatorios.com.br",
 
   /** Dados de fundação */
   founded: {
