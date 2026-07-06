@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "Avaliações de Clientes",
   description: `Veja avaliações reais de clientes que confiaram na ${siteConfig.name} para reforma, recuperação e manutenção de reservatórios metálicos em ${siteConfig.seo.region}. Peça seu orçamento.`,
   keywords:
-    "avaliações PH Reforma, depoimentos clientes reservatórios, reviews empresa tanques metálicos, melhor empresa reforma reservatório São José do Rio Preto",
+    "avaliações PH Reforma, depoimentos clientes reservatórios, reviews empresa tanques metálicos, melhor empresa reforma reservatório Araraquara Ribeirão Preto",
   alternates: { canonical: `${siteConfig.url}/avaliacoes` },
   openGraph: {
     title: `Avaliações de Clientes | ${siteConfig.name}`,

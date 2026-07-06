@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "Sobre Nós",
   description: `Conheça a ${siteConfig.name}: mais de ${yearsInBusiness} anos reformando, recuperando e mantendo reservatórios e tanques metálicos em ${siteConfig.seo.region}, com segurança, qualidade e laudos técnicos.`,
   keywords:
-    "sobre PH Reforma, empresa manutenção reservatórios, quem somos PH Reforma, reforma de reservatório São José do Rio Preto",
+    "sobre PH Reforma, empresa manutenção reservatórios, quem somos PH Reforma, reforma de reservatório Vista Alegre do Alto, reforma de reservatório Araraquara",
   alternates: { canonical: `${siteConfig.url}/sobre` },
   openGraph: {
     title: `Sobre a ${siteConfig.name}`,

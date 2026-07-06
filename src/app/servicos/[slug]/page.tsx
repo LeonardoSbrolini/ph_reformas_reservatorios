@@ -20,14 +20,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const service = getServiceBySlug(slug);
   if (!service) return {};
-  const title = `${service.title} de Reservatórios Metálicos em ${siteConfig.address.city}/${siteConfig.address.state}`;
-  const description = `${service.seoDesc} Atendemos ${siteConfig.address.city} e região.`;
+  const title = `${service.title} de Reservatórios Metálicos — ${siteConfig.seo.regionTitle}`;
+  const description = `${service.seoDesc} Atendemos ${siteConfig.address.city} e região (Araraquara, Ribeirão Preto, São Carlos e Matão).`;
 
   return {
     // `absolute` evita duplicar a marca, já presente no template do layout.
     title: { absolute: `${title} | ${siteConfig.shortName}` },
     description,
-    keywords: `${service.seoKeywords}, ${service.title.toLowerCase()} ${siteConfig.address.city}`,
+    keywords: `${service.seoKeywords}, ${service.title.toLowerCase()} Araraquara, ${service.title.toLowerCase()} Ribeirão Preto`,
     alternates: {
       canonical: `${siteConfig.url}/servicos/${service.slug}`,
     },

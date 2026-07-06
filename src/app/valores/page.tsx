@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "Missão, Visão e Valores",
   description: `Os princípios que guiam a ${siteConfig.name} em cada reforma de reservatório metálico em ${siteConfig.seo.region}: qualidade, segurança, compromisso e satisfação do cliente.`,
   keywords:
-    "missão visão valores PH Reforma, princípios empresa reservatórios, compromisso qualidade tanques metálicos, empresa confiável reservatório São José do Rio Preto",
+    "missão visão valores PH Reforma, princípios empresa reservatórios, compromisso qualidade tanques metálicos, empresa confiável reservatório Araraquara Ribeirão Preto",
   alternates: { canonical: `${siteConfig.url}/valores` },
   openGraph: {
     title: `Missão, Visão e Valores | ${siteConfig.name}`,

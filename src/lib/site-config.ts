@@ -47,11 +47,11 @@ export const siteConfig = {
 
   /** Endereço / área de atuação */
   address: {
-    city: "São José do Rio Preto",
+    city: "Vista Alegre do Alto",
     state: "SP",
     country: "Brasil",
     /** Cidade + UF prontos para exibição */
-    full: "São José do Rio Preto, SP",
+    full: "Vista Alegre do Alto, SP",
   },
 
   /** Redes sociais */
@@ -63,18 +63,26 @@ export const siteConfig = {
   seo: {
     /** Imagem padrão de compartilhamento (Open Graph / Twitter). */
     ogImage: "/hero-bg.jpg",
-    /** Região de atuação — usada em textos de SEO e no schema. */
-    region: "São José do Rio Preto e região",
+    /** Região de atuação — frase longa usada nas descrições (SEO) e no schema. */
+    region:
+      "Vista Alegre do Alto e região de Araraquara, Ribeirão Preto, São Carlos e Matão",
+    /** Frase curta de região — usada nos títulos das páginas. */
+    regionTitle: "Região de Araraquara e Ribeirão Preto",
     /** Cidades atendidas (ajuste conforme a área real de cobertura). */
     areaServed: [
-      "São José do Rio Preto",
-      "Mirassol",
-      "Bady Bassitt",
-      "Cedral",
-      "Guapiaçu",
+      "Vista Alegre do Alto",
+      "Taquaritinga",
+      "Matão",
+      "Monte Alto",
+      "Jaboticabal",
+      "Araraquara",
+      "Catanduva",
+      "São Carlos",
+      "Ribeirão Preto",
+      "Bebedouro",
     ],
     /** Coordenadas aproximadas da cidade (refine com o endereço exato). */
-    geo: { latitude: -20.8113, longitude: -49.3758 },
+    geo: { latitude: -21.1697, longitude: -48.6289 },
     /** Faixa de preço — sinal usado pelo Google no perfil local. */
     priceRange: "$$",
   },

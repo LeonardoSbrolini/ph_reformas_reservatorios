@@ -11,11 +11,13 @@ import { Contact } from "@/components/Contact";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
-  title: `Reforma de Reservatórios Metálicos em ${siteConfig.address.city}/${siteConfig.address.state}`,
+  title: {
+    absolute: `Reforma de Reservatórios Metálicos — ${siteConfig.seo.regionTitle}`,
+  },
   description: `Reforma, recuperação e manutenção de reservatórios e tanques metálicos em ${siteConfig.seo.region}. Proteção anticorrosiva, laudos técnicos e equipe especializada. Peça seu orçamento gratuito pelo WhatsApp.`,
   alternates: { canonical: siteConfig.url },
   openGraph: {
-    title: `Reforma de Reservatórios Metálicos em ${siteConfig.address.city}/${siteConfig.address.state}`,
+    title: `Reforma de Reservatórios Metálicos — ${siteConfig.seo.regionTitle}`,
     description: `Reforma, recuperação e manutenção de reservatórios e tanques metálicos em ${siteConfig.seo.region}. Orçamento gratuito pelo WhatsApp.`,
     url: siteConfig.url,
   },

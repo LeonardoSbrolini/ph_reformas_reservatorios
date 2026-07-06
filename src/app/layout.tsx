@@ -24,7 +24,7 @@ const googleSiteVerification = process.env.GOOGLE_SITE_VERIFICATION;
 
 export const metadata: Metadata = {
   title: {
-    default: `Reforma de Reservatórios Metálicos em ${siteConfig.address.city}/${siteConfig.address.state} | ${siteConfig.shortName}`,
+    default: `Reforma de Reservatórios Metálicos — ${siteConfig.seo.regionTitle} | ${siteConfig.shortName}`,
     template: `%s | ${siteConfig.shortName}`,
   },
   description: `Reforma, recuperação e manutenção de reservatórios e tanques metálicos em ${siteConfig.seo.region}. Empresa com anos de experiência, laudos técnicos e proteção anticorrosiva. Orçamento gratuito pelo WhatsApp.`,
@@ -35,7 +35,9 @@ export const metadata: Metadata = {
     "pintura industrial anticorrosiva",
     "impermeabilização de reservatório",
     `reforma de reservatório ${siteConfig.address.city}`,
-    "reservatório metálico São José do Rio Preto",
+    "reforma de reservatórios Araraquara",
+    "reforma de reservatórios Ribeirão Preto",
+    "manutenção de reservatório São Carlos",
     siteConfig.shortName,
   ],
   authors: [{ name: siteConfig.name }],
@@ -60,7 +62,7 @@ export const metadata: Metadata = {
     locale: "pt_BR",
     siteName: siteConfig.name,
     url: siteConfig.url,
-    title: `Reforma de Reservatórios Metálicos em ${siteConfig.address.city}/${siteConfig.address.state}`,
+    title: `Reforma de Reservatórios Metálicos — ${siteConfig.seo.regionTitle}`,
     description: `Reforma, recuperação e manutenção de reservatórios e tanques metálicos em ${siteConfig.seo.region}. Orçamento gratuito pelo WhatsApp.`,
     images: [
       {
@@ -71,7 +73,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `Reforma de Reservatórios Metálicos em ${siteConfig.address.city}/${siteConfig.address.state}`,
+    title: `Reforma de Reservatórios Metálicos — ${siteConfig.seo.regionTitle}`,
     description: `Reforma, recuperação e manutenção de reservatórios e tanques metálicos em ${siteConfig.seo.region}. Orçamento gratuito pelo WhatsApp.`,
     images: [siteConfig.seo.ogImage],
   },
